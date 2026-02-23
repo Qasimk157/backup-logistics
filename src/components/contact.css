@@ -1,0 +1,38 @@
+form {
+	width: -webkit-fill-available;
+}
+form .p-field {
+	width: -webkit-fill-available;
+	display: grid;
+	margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+	form .p-field {
+		display: block;
+		margin-bottom: 1rem;
+	}
+	.p-card-content {
+		font-size: 10px;
+	}
+}
+form .p-field input {
+	width: -webkit-fill-available !important;
+}
+form .p-field label {
+	padding: 0 0 7px 19px;
+}
+form .p-field input {
+	padding: 12px 30px 12px 30px;
+}
+.p-card-body {
+	padding: 100px 15px;
+}
+@media screen and (max-width: 768px) {
+.title-home{
+	font-size: 1.5rem !important;
+	margin-top: 100px !important;
+}
+.home-image{
+	margin-top: 50px !important;
+}
+}

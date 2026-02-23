@@ -1,0 +1,28 @@
+.pricingTable tbody tr .slipsNumber{
+    font-size: small;
+    color: #7f8588;
+    line-height: 16px;
+    text-align: center !important;
+}
+.pricingTable thead th .p-column-header-content{
+    font-weight: 600;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    text-align: center !important;
+}
+.pricingTable tbody tr .slipsCharges{
+    font-size: 14px;
+    font-weight: 800;
+    /* display: inline; */
+    color: #7f8588;
+    padding-right: 3px;
+    line-height: 16px;
+    text-align: center !important;
+}
+.pricingTable tbody tr:last-child .slipsNumber {
+    padding: 1rem 0;
+}
+.pricingTable thead th  {
+    padding: 1rem 0;
+}
