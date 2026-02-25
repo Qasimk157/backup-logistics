@@ -1,13 +1,10 @@
-import React, { useRef } from "react";
-import logo from "./logo.svg";
+import { useRef } from "react";
 import "./App.css";
 import Navigation from "./components/Navigation";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
-import Features from "./components/Features";
-import Pricing from "./components/Pricing";
-import Support from "./components/Support";
+
 import Contact from "./components/Contact";
 import aboutusBackground from "../src/images/about-background.png";
 

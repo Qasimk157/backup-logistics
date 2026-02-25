@@ -1,6 +1,6 @@
 {
-  "name": "taxslips-home-ui",
-  "homepage": "https://taxslips.com/",
+  "name": "backup-logistics-ui",
+  "homepage": "https://backuplogistics.us/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
