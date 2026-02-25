@@ -30,7 +30,8 @@ const About = () => {
       <Typography sx={{textAlign:"center",paddingBottom:"2rem",color:"#797979"}}>Our Mission</Typography>
     <Grid container sx={{paddingTop:"1.5rem!important",justifyContent:"center"}}>
         {/* <Grid item lg={2} xl={2} md={1} sm={4} xs={2}></Grid> */}
-        <Grid item lg={6} xl={6} md={6} sm={12} xs={12}>
+        {/* <Grid item lg={6} xl={6} md={6} sm={12} xs={12}> */}
+        <Grid size={{lg:6, xl:6, md:6, sm:12, xs:12}}>
           {aboutusList.map((item:any)=>{
             return(
               <Typography sx={{
