@@ -52,7 +52,8 @@ const About = () => {
             )
           })}
         </Grid>
-        <Grid item lg={6} xl={6} md={6} sm={12} xs={12}>
+        {/* <Grid item lg={6} xl={6} md={6} sm={12} xs={12}> */}
+          <Grid size={{lg:6, xl:6, md:6, sm:12, xs:12}}>
             <img src={aboutus} alt="aboutus" style={{maxWidth:"100%", height:"auto"}} />
         </Grid>
         {/* <Grid item lg={2} xl={2} md={1} sm={4} xs={2}></Grid> */}

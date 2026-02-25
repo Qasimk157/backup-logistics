@@ -38,7 +38,8 @@ const Home = () => {
 {/* <div className='lg:mx-8 xl:mx-8 md:xm-8 sm:mx-8 xs:mx-8' style={{margin:"0 3rem"}}> */}
 <div>
       <Grid container sx={{justifyContent:"center"}}>
-        <Grid item lg={6} xl={6} md={6} sm={12} xs={12}>
+        {/* <Grid item lg={6} xl={6} md={6} sm={12} xs={12}> */}
+          <Grid size={{lg:6, xl:6, md:6, sm:12, xs:12}}>
         <div
             style={{
               marginTop: "190px",
@@ -71,7 +72,8 @@ const Home = () => {
             </Button>
             {/* <Button variant="contained" sx={{marginRight:"10px",marginBottom:"10px"}}><Link to="https://appv3.taxslips.com/#/create-an-account" style={{color:"#fff",textDecoration:"none"}} >get started</Link></Button> */}
         </Grid>
-        <Grid item lg={6} xl={5.5} md={6} sm={12} xs={12}>
+        {/* <Grid item lg={6} xl={5.5} md={6} sm={12} xs={12}> */}
+        <Grid size={{lg:6, xl:5.5, md:6, sm:12, xs:12}}>
         <img src={homePage} alt="home" className="home-image" style={{maxWidth:"100%", height:"auto", marginTop:"110px"}} />
         </Grid>
       </Grid>

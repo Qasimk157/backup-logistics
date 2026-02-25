@@ -49,13 +49,20 @@ const Footer: React.FC<IFooterCallbacks> = ({
 		<div className='lg:mx-8 xl:mx-8 md:xm-8 sm:mx-8 xs:mx-8' style={{margin:"0 3rem"}}>
 			<Grid container sx={{justifyContent:"center"}}>
 				{/* <Grid item lg={1.5} xl={1.5} md={12} sm={12} xs={12}></Grid> */}
-				<Grid
+				{/* <Grid
 					item lg={3} xl={3} md={3} sm={12} xs={12}
 					sx={{
 						borderLeft: "1px solid rgba(255,255,255,.3)",
 						padding: "0 15px 50px 15px",
 					}}
-				>
+				> */}
+				<Grid
+					size={{ lg: 3, xl: 3, md: 3, sm: 12, xs: 12 }}
+					sx={{
+						borderLeft: "1px solid rgba(255,255,255,.3)",
+						padding: "0 15px 50px 15px",
+					}}
+					>
 					<Box>
 						<Typography
 							variant="h2"
@@ -79,13 +86,20 @@ const Footer: React.FC<IFooterCallbacks> = ({
 						</Typography>
 					</Box>
 				</Grid>
-				<Grid
+				{/* <Grid
 					item lg={3} xl={3} md={3} sm={12} xs={12}
 					sx={{
 						borderLeft: "1px solid rgba(255,255,255,.3)",
 						padding: "0 15px 50px 15px",
 					}}
-				>
+				> */}
+				<Grid
+					size={{ lg: 3, xl: 3, md: 3, sm: 12, xs: 12 }}
+					sx={{
+						borderLeft: "1px solid rgba(255,255,255,.3)",
+						padding: "0 15px 50px 15px",
+					}}
+					>
 					<Box>
 						<Typography
 							variant="h2"
@@ -116,13 +130,20 @@ const Footer: React.FC<IFooterCallbacks> = ({
 						})}
 					</Box>
 				</Grid>
-				<Grid
+				{/* <Grid
 					item lg={3} xl={3} md={3} sm={12} xs={12}
 					sx={{
 						borderLeft: "1px solid rgba(39, 185, 51, 0.3)",
 						padding: "0 15px 50px 15px",
 					}}
-				>
+				> */}
+				<Grid
+					size={{ lg: 3, xl: 3, md: 3, sm: 12, xs: 12 }}
+					sx={{
+						borderLeft: "1px solid rgba(39, 185, 51, 0.3)",
+						padding: "0 15px 50px 15px",
+					}}
+					>
 					<Box>
 						<Typography
 							variant="h2"

@@ -124,27 +124,43 @@ const Pricing = () => {
 				{/* <Grid container lg={10} xl={10} md={5} sm={8} xs={8}> */}
 				{pricingList.map((item: any, index: any) => {
 					return (
+						// <Grid
+						// 	item
+						// 	lg={3.25}
+						// 	xl={3.25}
+						// 	md={3}
+						// 	sm={12}
+						// 	xs={12}
+						// 	sx={{
+						// 		...individualStep,
+						// 		"&.MuiGrid-root": {
+						// 			bgcolor: "#f6f9fc",
+						// 			borderRadius: "5px",
+						// 			boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+						// 			transition: "box-shadow .3s",
+						// 			padding: "20px 0",
+						// 			marginTop: "10px",
+						// 		},
+						// 		"&.MuiGrid-root:hover": { marginTop: "0" },
+						// 	}}
+						// 	key={index}
+						// >
 						<Grid
-							item
-							lg={3.25}
-							xl={3.25}
-							md={3}
-							sm={12}
-							xs={12}
+							size={{ lg: 3.25, xl: 3.25, md: 3, sm: 12, xs: 12 }}
 							sx={{
 								...individualStep,
-								"&.MuiGrid-root": {
-									bgcolor: "#f6f9fc",
-									borderRadius: "5px",
-									boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
-									transition: "box-shadow .3s",
-									padding: "20px 0",
-									marginTop: "10px",
+								bgcolor: "#f6f9fc",
+								borderRadius: "5px",
+								boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+								transition: "box-shadow .3s, margin-top .3s",
+								padding: "20px 0",
+								marginTop: "10px",
+								"&:hover": {
+								marginTop: "0",
 								},
-								"&.MuiGrid-root:hover": { marginTop: "0" },
 							}}
 							key={index}
-						>
+							>
 							<Typography variant="h5" sx={{ m: "0 0 15px 0" }}>
 								{item.tag}
 							</Typography>
@@ -212,27 +228,43 @@ const Pricing = () => {
 				{/* <Grid container lg={10} xl={10} md={5} sm={8} xs={8}> */}
 				{pricingListWithT5AndT3.map((item: any, index: any) => {
 					return (
+						// <Grid
+						// 	item
+						// 	lg={2.8}
+						// 	xl={2.8}
+						// 	md={2.8}
+						// 	sm={12}
+						// 	xs={12}
+						// 	sx={{
+						// 		...individualStep,
+						// 		"&.MuiGrid-root": {
+						// 			bgcolor: "#f6f9fc",
+						// 			borderRadius: "5px",
+						// 			boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+						// 			transition: "box-shadow .3s",
+						// 			padding: "20px 0",
+						// 			marginTop: "10px",
+						// 		},
+						// 		"&.MuiGrid-root:hover": { marginTop: "0" },
+						// 	}}
+						// 	key={index}
+						// >
 						<Grid
-							item
-							lg={2.8}
-							xl={2.8}
-							md={2.8}
-							sm={12}
-							xs={12}
+							size={{ lg: 2.8, xl: 2.8, md: 2.8, sm: 12, xs: 12 }}
 							sx={{
 								...individualStep,
-								"&.MuiGrid-root": {
-									bgcolor: "#f6f9fc",
-									borderRadius: "5px",
-									boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
-									transition: "box-shadow .3s",
-									padding: "20px 0",
-									marginTop: "10px",
+								bgcolor: "#f6f9fc",
+								borderRadius: "5px",
+								boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+								transition: "box-shadow .3s, margin-top .3s",
+								padding: "20px 0",
+								marginTop: "10px",
+								"&:hover": {
+								marginTop: "0",
 								},
-								"&.MuiGrid-root:hover": { marginTop: "0" },
 							}}
 							key={index}
-						>
+							>
 							<Typography variant="h5" sx={{ m: "0 0 15px 0" }}>
 								{item.tag}
 							</Typography>

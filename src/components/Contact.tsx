@@ -21,7 +21,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Card } from "primereact/card";
 import "./contact.css";
 import http from "../common/http-common";
-import { ProgressSpinner } from "primereact/progressspinner";
 
 interface FormData {
 	email: string;
@@ -121,7 +120,8 @@ const Contact: React.FC = () => {
 					columnGap={2}
 				>
 					{/* <Grid item lg={1} xl={1} md={1} sm={1} xs={1}></Grid> */}
-					<Grid
+					<Grid size={{lg:7.8, xl:7.8, md:6, sm:12, xs:12}}>
+					{/* <Grid
 						item
 						lg={7.8}
 						xl={7.8}
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
 						sm={12}
 						xs={12}
 						// sx={{ padding: "10px 25px" }}
-					>
+					> */}
 						<form onSubmit={handleSubmit(onSubmit)}>
 							<div className="p-field">
 								<label htmlFor="email">Your Email*</label>
@@ -197,7 +197,8 @@ const Contact: React.FC = () => {
 						</form>
 						<Toast ref={toast} />
 					</Grid>
-					<Grid item lg={4} xl={4} md={4} sm={10} xs={12}>
+					{/* <Grid item lg={4} xl={4} md={4} sm={10} xs={12}> */}
+					<Grid size={{lg:4, xl:4, md:4, sm:10, xs:12}}>
 						<Card>
 							{/* <div className="card-detail"> */}
 							<div className="flex pl-3 align-items-center pb-6">

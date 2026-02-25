@@ -89,24 +89,37 @@ const Features = () => {
 				{/* <Grid item lg={3} xl={3} md={6} sm={12} xs={12}> */}
 				{featureList.map((item: any, index: any) => {
 					return (
+						// <Grid
+						// 	item
+						// 	lg={3}
+						// 	xl={3}
+						// 	md={5}
+						// 	sm={12}
+						// 	xs={12}
+						// 	sx={{
+						// 		...individualStep,
+						// 		"&.MuiGrid-root:hover": {
+						// 			bgcolor: "#f6f9fc",
+						// 			borderRadius: "5px",
+						// 			boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+						// 			transition: "box-shadow .3s",
+						// 		},
+						// 	}}
+						// 	key={index}
+						// >
 						<Grid
-							item
-							lg={3}
-							xl={3}
-							md={5}
-							sm={12}
-							xs={12}
+							size={{ lg: 3, xl: 3, md: 5, sm: 12, xs: 12 }}
 							sx={{
 								...individualStep,
 								"&.MuiGrid-root:hover": {
-									bgcolor: "#f6f9fc",
-									borderRadius: "5px",
-									boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
-									transition: "box-shadow .3s",
+								bgcolor: "#f6f9fc",
+								borderRadius: "5px",
+								boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+								transition: "box-shadow .3s",
 								},
 							}}
 							key={index}
-						>
+							>
 							<img
 								src={item.icon}
 								alt="icon"
@@ -132,24 +145,37 @@ const Features = () => {
 				{/* <Grid container lg={10} xl={10} md={5} sm={8} xs={8}> */}
 				{featureListSecondRow.map((item: any, index: any) => {
 					return (
+						// <Grid
+						// 	item
+						// 	lg={3}
+						// 	xl={3}
+						// 	md={5}
+						// 	sm={12}
+						// 	xs={12}
+						// 	sx={{
+						// 		...individualStep,
+						// 		"&.MuiGrid-root:hover": {
+						// 			bgcolor: "#f6f9fc",
+						// 			borderRadius: "5px",
+						// 			boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+						// 			transition: "box-shadow .3s",
+						// 		},
+						// 	}}
+						// 	key={index}
+						// >
 						<Grid
-							item
-							lg={3}
-							xl={3}
-							md={5}
-							sm={12}
-							xs={12}
+							size={{ lg: 3, xl: 3, md: 5, sm: 12, xs: 12 }}
 							sx={{
 								...individualStep,
-								"&.MuiGrid-root:hover": {
-									bgcolor: "#f6f9fc",
-									borderRadius: "5px",
-									boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
-									transition: "box-shadow .3s",
+								"&:hover": {
+								bgcolor: "#f6f9fc",
+								borderRadius: "5px",
+								boxShadow: "0 0 35px -2px rgb(0 0 0 / 20%)",
+								transition: "box-shadow .3s",
 								},
 							}}
 							key={index}
-						>
+							>
 							<img
 								src={item.icon}
 								alt="icon"
