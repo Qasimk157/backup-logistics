@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
 						<Toast ref={toast} />
 					</Grid>
 					{/* <Grid item lg={4} xl={4} md={4} sm={10} xs={12}> */}
-					<Grid size={{lg:4, xl:4, md:4, sm:10, xs:12}}>
+					<Grid size={{lg:5, xl:3.5, md:4, sm:10, xs:12}} sx={{ ml: 8 }}>
 						<Card>
 							{/* <div className="card-detail"> */}
 							<div className="flex pl-3 align-items-center pb-6">
