@@ -114,7 +114,7 @@ const Navigation: React.FC<INavbarCallbacks> = ({
 
                 }, }}>
 						<Link
-							to="https://appv3.taxslips.com/#/taxslips_v5.com/"
+							to="https://backup-logistics.vercel.app/#/taxslips_v5.com/"
 							style={{ color: "#fff", textDecoration: "none" }}
 						>
 							Login
@@ -122,7 +122,7 @@ const Navigation: React.FC<INavbarCallbacks> = ({
 					</Button>
 					<Button variant="contained">
 						<Link
-							to="https://appv3.taxslips.com/#/create-an-account"
+							to="https://backup-logistics.vercel.app/#/create-an-account"
 							style={{ color: "#fff", textDecoration: "none" }}
 						>
 							Sign Up
@@ -173,7 +173,7 @@ const Navigation: React.FC<INavbarCallbacks> = ({
                 					}, }}
 							>
 								<Link
-									to="https://appv3.taxslips.com/#/taxslips_v5.com/"
+									to="https://backup-logistics.vercel.app/#/taxslips_v5.com/"
 									style={{ color: "#fff", textDecoration: "none" }}
 								>
 									Login
@@ -186,7 +186,7 @@ const Navigation: React.FC<INavbarCallbacks> = ({
                 					}, }}
 									>
 								<Link
-									to="https://appv3.taxslips.com/#/create-an-account"
+									to="https://backup-logistics.vercel.app/#/create-an-account"
 									style={{ color: "#fff", textDecoration: "none" }}
 								>
 									Sign Up
@@ -215,8 +215,8 @@ const Navigation: React.FC<INavbarCallbacks> = ({
           </Button>
           <Box sx={{margin:"0 4rem"}}>
 
-          <Button color="inherit" variant="outlined" sx={{marginRight:"10px"}}><Link to="https://appv3.taxslips.com/#/taxslips_v5.com/" target='_blank' style={{color:"#fff",textDecoration:"none"}} >Login</Link></Button>
-          <Button color="inherit" variant="outlined"><Link to="https://appv3.taxslips.com/#/create-an-account" target='_blank' style={{color:"#fff",textDecoration:"none"}}>Sign Up</Link></Button>
+          <Button color="inherit" variant="outlined" sx={{marginRight:"10px"}}><Link to="https://backup-logistics.vercel.app/#/taxslips_v5.com/" target='_blank' style={{color:"#fff",textDecoration:"none"}} >Login</Link></Button>
+          <Button color="inherit" variant="outlined"><Link to="https://backup-logistics.vercel.app/#/create-an-account" target='_blank' style={{color:"#fff",textDecoration:"none"}}>Sign Up</Link></Button>
           </Box> */}
 				</Toolbar>
 			</Container>
