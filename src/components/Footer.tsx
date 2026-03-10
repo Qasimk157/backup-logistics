@@ -168,223 +168,142 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							Privacy Policy
 						</Typography>
 						<Dialog
-							header="Privacy Policy"
-							footer={footerContent}
-							visible={visiblePrivacyPolicy}
-							style={{ width: "50vw" }}
-							onHide={() => setVisiblePrivacyPolicy(false)}
-						>
-							<h4>Privacy Policy</h4>
-							<p>
-								This privacy statement describes how Hatchbox Inc collects and
-								uses the personal information you provide on our Web site:{" "}
-								<a href="https://v3.taxslips.com/" style={{ textDecoration: "none" }}>
-									{" "}
-									v3.taxslips.com. 
-									{" "}
-								</a>
-								It also describes the choices available to you regarding our use
-								of your personal information and how you can access and update
-								this information.
-							</p>
-							<h4>Collection and Use of Personal Information</h4>
-							<p>Collection and Use of Personal Information</p>
+								header="Privacy Policy"
+								footer={footerContent}
+								visible={visiblePrivacyPolicy}
+								className="privacy-dialog"
+								style={{ width: "55vw" }}
+								onHide={() => setVisiblePrivacyPolicy(false)}
+							>
+
+							<div className="policy-section">
+							<h3>Information We Collect</h3>
+
 							<ul>
-								<li>
-									Contact Information such as name, email address, mailing
-									address, phone number
-								</li>
-								<li>
-									Financial Information such as bank or brokerage account
-									numbers, types of investments
-								</li>
-								<li>Social Security Number</li>
-								<li>
-									Unique Identifiers such as user name, account number, password
-								</li>
+							<li>Full name and business name</li>
+							<li>Email address</li>
+							<li>Mobile phone number</li>
+							<li>Company address and location</li>
+							<li>Freight and shipment details you provide</li>
+							<li>Communication records (calls, texts, emails)</li>
 							</ul>
-							<p>We also collect the following information from you</p>
+
+							<p>
+							Backup Logistics LLC collects personal information when you interact with
+							our website, contact forms, or services to ensure efficient freight
+							logistics and communication.
+							</p>
+							</div>
+
+
+							<div className="policy-section">
+							<h3>How We Use Your Information</h3>
+
 							<ul>
-								<li>
-									Information about your business such as company name, company
-									size, business type
-								</li>
-								<li>
-									Demographic information such as age, education, gender,
-									interests and zip code
-								</li>
+							<li>Dispatching and coordinating freight shipments</li>
+							<li>Sending load confirmations and operational updates</li>
+							<li>Communicating via SMS, phone, or email</li>
+							<li>Processing payments and managing accounts</li>
+							<li>Complying with legal and regulatory obligations</li>
 							</ul>
+							</div>
+
+
+							<div className="policy-section">
+							<h3>SMS / Text Message Communications</h3>
+
 							<p>
-								As is true of most Web sites, we automatically gather
-								information about your computer such as your IP address, browser
-								type, referring/exit pages, and operating system.
+							If you provide your mobile phone number, you may receive SMS messages from
+							Backup Logistics LLC related to freight operations.
 							</p>
-							<br />
-							<p>We use this information to</p>
+
 							<ul>
-								<li>Respond to customer service requests</li>
-								<li>Send you a newsletter</li>
-								<li>Send you marketing communications</li>
-								<li>Improve our Web site and marketing efforts</li>
-								<li>Conduct research and analysis</li>
+							<li>Messages are operational and informational only</li>
+							<li>No mobile opt-in data will be shared with third parties</li>
+							<li>Reply <b>STOP</b> to opt out anytime</li>
+							<li>Reply <b>HELP</b> for support</li>
+							<li>Message and data rates may apply</li>
 							</ul>
-							<h5>Conduct research and analysis</h5>
+
 							<p>
-								You may choose to stop receiving our newsletter or marketing
-								emails by following the unsubscribe instructions included in
-								these emails or you can contact us at{" "}
-								<a
-									href="mailto:hello@taxslips.com"
-									style={{ textDecoration: "none" }}
-								>
-									hello@taxslips.com
-								</a>{" "}
-								.
+							Visit:
+							<a href="https://backuplogistics.us/sms-terms" target="_blank">
+							backuplogistics.us/sms-terms
+							</a>
 							</p>
-							<h5>Information Sharing</h5>
-							<p>
-								We will share your personal information with third parties only
-								in the ways that are described in this privacy statement. We do
-								not sell your personal information to third parties.
-							</p>
-							<br />
-							<p>We may also disclose your personal information</p>
+							</div>
+
+
+							<div className="policy-section">
+							<h3>How We Share Your Information</h3>
+
 							<ul>
-								<li>
-									as required by law such as to comply with a subpoena, or
-									similar legal process
-								</li>
-								<li>
-									when we believe in good faith that disclosure is necessary to
-									protect our rights, protect your safety or the safety of
-									others, investigate fraud, or respond to a government request,
-								</li>
-								<li>
-									if Hatchbox Inc. is involved in a merger, acquisition, or sale
-									of all or a portion of its assets, you will be notified via
-									email and/or a prominent notice on our Web site of any change
-									in ownership or uses of your personal information, as well as
-									any choices you may have regarding your personal information,
-								</li>
-								<li>
-									to any other third party with your prior consent to do so.
-								</li>
+							<li>
+							With trusted technology providers (e.g., RingCentral for SMS delivery)
+							</li>
+							<li>
+							With carriers or shippers involved in freight coordination
+							</li>
+							<li>
+							When required by law or regulatory authorities
+							</li>
 							</ul>
-							<h4>Cookies and Other Tracking Technologies</h4>
+
 							<p>
-								We may use cookies, for example, to keep track of your
-								preferences and profile information. Cookies are also used to
-								collect general usage and volume statistical information that
-								does not include personal information.
+							We <b>do not sell, rent, or trade</b> your personal information.
+							Mobile SMS consent data is never shared with third parties for marketing.
 							</p>
-							<i>Web beacons</i>
+							</div>
+
+
+							<div className="policy-section">
+							<h3>Data Security</h3>
+
 							<p>
-								Our Web pages contain electronic images known as Web beacons
-								(sometimes called single-pixel gifs) and are used along with
-								cookies to compile aggregated statistics to analyze how our site
-								is used and may be used in some of our emails to let us know
-								which emails and links have been opened by recipients. This
-								allows us to gauge the effectiveness of our customer
-								communications and marketing campaigns.
+							We implement technical and organizational safeguards to protect your
+							personal information from unauthorized access, misuse, or disclosure.
+							While we strive to protect your data, no internet transmission method
+							is completely secure.
 							</p>
+							</div>
+
+
+							<div className="policy-section">
+							<h3>Your Rights</h3>
+
+							<ul>
+							<li>Request access to your personal data</li>
+							<li>Request corrections or deletion</li>
+							<li>Opt-out of SMS communications anytime</li>
+							<li>Update your contact preferences</li>
+							</ul>
+							</div>
+
+
+							<div className="policy-section contact-section">
+							<h3>Contact Us</h3>
+
+							<p>If you have questions about this Privacy Policy:</p>
+
 							<p>
-								We use a third party to gather information about how you and
-								others use our Web site. For example, we will know how many
-								users access a specific page and which links they clicked on. We
-								use this aggregated information to understand and optimize how
-								our site is used.
+							<b>Backup Logistics LLC</b><br/>
+
+							<a href="https://backuplogistics.us">
+							backuplogistics.us
+							</a>
+							<br/>
+
+							<a href="mailto:phone@backuplogistics.us">
+							phone@backuplogistics.us
+							</a>
+							<br/>
+
+							Houston, Texas, United States
 							</p>
-							<i>Links to Other Web Sites</i>
-							<p>
-								The security of your personal information is important to us.
-								When you enter sensitive information (such as credit card
-								number) on our order forms, we encrypt the transmission of that
-								information using secure socket layer technology (SSL).
-							</p>
-							<p>
-								We follow generally accepted industry standards to protect the
-								personal information submitted to us, both during transmission
-								and once we receive it. No method of transmission over the
-								Internet, or method of electronic storage, is 100% secure,
-								however. Therefore, we cannot guarantee its absolute security.
-							</p>
-							<p>
-								We will retain your information for as long as your account is
-								active or as needed to provide you services. If you wish to
-								cancel your account or request that we no longer use your
-								information to provide you services contact us at{" "}
-								<a
-									href="mailto:hello@taxslips.com"
-									style={{ textDecoration: "none" }}
-								>
-									hello@taxslips.com
-								</a>
-								.
-							</p>
-							<p>
-								We will retain and use your information as necessary to comply
-								with our legal obligations, resolve disputes, and enforce our
-								agreements.
-							</p>
-							<p>
-								If you have any questions about security on our Web site, you
-								can contact us at{" "}
-								<a
-									href="mailto:hello@taxslips.com"
-									style={{ textDecoration: "none" }}
-								>
-									hello@taxslips.com
-								</a>
-								.
-							</p>
-							<h4>Additional Policy Information</h4>
-							<p>
-								Our Web site offers publicly accessible blogs or community
-								forums. You should be aware that any information you provide in
-								these areas may be read, collected, and used by others who
-								access them.
-							</p>
-							<h5>Correcting and Updating Your Personal Information</h5>
-							<p>
-								To review and update your personal information to ensure it is
-								accurate, contact us at{" "}
-								<a
-									href="mailto:hello@taxslips.com"
-									style={{ textDecoration: "none" }}
-								>
-									hello@taxslips.com
-								</a>
-								.
-							</p>
-							<h5>Notification of Privacy Statement Changes</h5>
-							<p>
-								We may update this privacy statement to reflect changes to our
-								information practices. If we make any material changes we will
-								notify you by email (sent to the e-mail address specified in
-								your account) or by means of a notice on this Site prior to the
-								change becoming effective.We encourage you to periodically
-								review this page for the latest information on our privacy
-								practices.
-							</p>
-							<h4>Contact Information</h4>
-							<p>
-								You can contact us about this privacy statement by writing or
-								email us at the address below:
-							</p>
-							<p>Hatchbox Inc.</p>
-							<p>1550 South Gateway Rd. Suite 229</p>
-							<p>Mississauga, ON, CanadaL4W 5G6</p>
-							<p>
-								Email:{" "}
-								<a
-									href="mailto:hello@taxslips.com"
-									style={{ textDecoration: "none" }}
-								>
-									hello@taxslips.com
-								</a>
-							</p>
-							<p>Phone: (905) 624-9559</p>
-						</Dialog>
+
+							</div>
+
+							</Dialog>
 
 						<Typography
 							sx={{
