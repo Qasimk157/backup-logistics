@@ -509,10 +509,6 @@ const Footer: React.FC<IFooterCallbacks> = ({
 						</a>
 						</p>
 
-						<p className="dev-note">
-						For Web Developer — Copy the following instructions exactly into the website contact or onboarding form.
-						</p>
-
 						</div>
 
 
