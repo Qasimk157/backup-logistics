@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "primereact/button";
 import homePage from "../images/taxslips-home-img.png";
-import "./home.css";
+import "./homeData.css";
 
 const Home: React.FC = () => {
   return (

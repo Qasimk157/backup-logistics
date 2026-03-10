@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
 import React, { useState } from "react";
-import "./footer.css";
+import "./footerData.css";
 
 interface IFooterCallbacks {
   onHomeClick: () => void;

@@ -12,7 +12,7 @@ import { Toast } from "primereact/toast";
 import { Message } from "primereact/message";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import "./contact.css";
+import "./contactData.css";
 import http from "../common/http-common";
 
 interface FormData {

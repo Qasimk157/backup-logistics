@@ -1,6 +1,6 @@
 import React from "react";
 import aboutus from "../images/aboutus.png";
-import "./about.css";
+import "./aboutData.css";
 
 const missionPoints = [
   {
