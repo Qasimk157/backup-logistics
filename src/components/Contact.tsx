@@ -228,10 +228,10 @@ const Contact: React.FC = () => {
 								></i>
 								<div className="pl-4 pr-4">
 									<a
-										href="mailto:qasimkhanneng@gmail.com"
+										href="mailto:Shahzaib@backuplogistics.us"
 										style={{ fontWeight: "bold", textDecoration: "auto" }}
 									>
-										qasimkhanneng@gmail.com
+										Shahzaib@backuplogistics.us
 									</a>
 								</div>
 							</div>

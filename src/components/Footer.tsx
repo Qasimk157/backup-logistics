@@ -82,7 +82,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							609-900-4243
 						</Typography>
 						<Typography sx={{ margin: "24px 0 16px 0" }}>
-							qasimkhanneng@gmail.com
+							Shahzaib@backuplogistics.us
 						</Typography>
 					</Box>
 				</Grid>
@@ -293,8 +293,8 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							</a>
 							<br/>
 
-							<a href="mailto:phone@backuplogistics.us">
-							phone@backuplogistics.us
+							<a href="mailto:Shahzaib@backuplogistics.us">
+							Shahzaib@backuplogistics.us
 							</a>
 							<br/>
 
@@ -420,8 +420,8 @@ const Footer: React.FC<IFooterCallbacks> = ({
 						You may also opt out by emailing:
 						</p>
 
-						<a href="mailto:phone@backuplogistics.us">
-						phone@backuplogistics.us
+						<a href="mailto:Shahzaib@backuplogistics.us">
+						Shahzaib@backuplogistics.us
 						</a>
 
 						</div>
@@ -435,8 +435,8 @@ const Footer: React.FC<IFooterCallbacks> = ({
 						Reply <b>HELP</b> to any message or contact us at:
 						</p>
 
-						<a href="mailto:phone@backuplogistics.us">
-						phone@backuplogistics.us
+						<a href="mailto:Shahzaib@backuplogistics.us">
+						Shahzaib@backuplogistics.us
 						</a>
 
 						</div>
