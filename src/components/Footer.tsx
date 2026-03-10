@@ -21,6 +21,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 	const [visiblePrivacyPolicy, setVisiblePrivacyPolicy] = useState(false);
 	const [visibleTermsAndConditions, setVisibleTermsAndConditions] = useState(false);
 	const [smsvisibleTermsAndConditions, setSmsVisibleTermsAndConditions] = useState(false);
+	const [generalTermsAndConditions, setGeneralTermsAndConditions] = useState(false);
 
 	const siteMapLinkList = [
 		{ text: "About Us", link: onHomeClick },
@@ -39,6 +40,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 					setVisiblePrivacyPolicy(false);
 					setVisibleTermsAndConditions(false);
 					setSmsVisibleTermsAndConditions(false);
+					setGeneralTermsAndConditions(false);
 				}}
 				// autoFocus
 				size="small"
@@ -608,6 +610,241 @@ Location: Houston, Texas, United States
 						</div>
 
 						</Dialog>
+
+
+						<Typography
+							sx={{
+								paddingBottom: "16px",
+								cursor: "pointer",
+								"&.MuiTypography-root:hover": { color: "#ef8410" },
+							}}
+							variant="body1"
+							onClick={() => setGeneralTermsAndConditions(true)}
+						>
+							General Terms and Conditions
+						</Typography>
+
+						<Dialog
+							header="General Terms and Conditions"
+							footer={footerContent}
+							visible={generalTermsAndConditions}
+							className="privacy-dialog"
+							style={{ width: "60vw" }}
+							onHide={() => setGeneralTermsAndConditions(false)}
+						>
+
+						<div className="policy-section">
+						<p>
+						<b>Backup Logistics LLC</b> | 
+						<a href="https://backuplogistics.us" target="_blank">
+						backuplogistics.us
+						</a>
+						</p>
+
+						<p><b>Effective Date:</b> March 10, 2026</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>1. Acceptance of Terms</h3>
+						<p>
+						By accessing or using the website located at backuplogistics.us (the "Site") or any services provided by Backup Logistics LLC ("Company," "we," "us," or "our"), you agree to be legally bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Site or services.
+						</p>
+
+						<p>
+						These Terms apply to all visitors, clients, carriers, brokers, drivers, shippers, and any other parties who access or use our website or services.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>2. Company Overview</h3>
+
+						<p>
+						Backup Logistics LLC is a licensed freight logistics and transportation company headquartered in Houston, Texas. We provide freight coordination, carrier dispatch, and transportation brokerage services to clients and carriers across the United States.
+						</p>
+
+						<p>
+						Our website at backuplogistics.us serves as our primary online presence for information, contact, and business onboarding purposes.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>3. Services Provided</h3>
+
+						<ul>
+						<li>Freight brokerage and load matching between shippers and carriers</li>
+						<li>Carrier dispatching and fleet coordination</li>
+						<li>Load booking, scheduling, and rate confirmation</li>
+						<li>Pickup and delivery coordination and tracking updates</li>
+						<li>Carrier onboarding and compliance management</li>
+						<li>Communication and administrative support for freight operations</li>
+						</ul>
+
+						<p>
+						We reserve the right to modify, suspend, or discontinue any service at any time without prior notice.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>4. Eligibility</h3>
+
+						<p>
+						By using our Site or services, you represent that you are at least 18 years of age, have the legal authority to enter into a binding agreement, and are using our services for lawful business purposes only.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>5. Use of the Website</h3>
+
+						<p>You agree to use this Site only for lawful purposes. You must not:</p>
+
+						<ul>
+						<li>Use the Site for any fraudulent, unlawful, or deceptive purpose</li>
+						<li>Transmit harmful, offensive, or disruptive content</li>
+						<li>Attempt unauthorized access to any part of our systems or data</li>
+						<li>Reproduce, duplicate, copy, or resell any part of the Site without written permission</li>
+						<li>Use automated tools, bots, or scrapers to collect data from the Site</li>
+						<li>Interfere with or disrupt the security or functionality of the Site</li>
+						</ul>
+
+						<p>
+						We reserve the right to suspend or terminate access to our Site for any user who violates these conditions.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>6. Carrier Responsibilities</h3>
+
+						<ul>
+						<li>Maintain all required operating authorities, licenses, permits, and insurance</li>
+						<li>Adhere to agreed pickup and delivery schedules</li>
+						<li>Communicate promptly about delays or shipment issues</li>
+						<li>Ensure proper handling and care of freight</li>
+						<li>Comply with DOT and FMCSA regulations</li>
+						<li>Not broker or re-broker loads without written consent</li>
+						</ul>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>7. Shipper / Client Responsibilities</h3>
+
+						<ul>
+						<li>Provide accurate freight information</li>
+						<li>Ensure cargo is properly packaged and ready for pickup</li>
+						<li>Fulfill payment obligations</li>
+						<li>Notify of changes or cancellations</li>
+						</ul>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>8. Rates, Payment, and Billing</h3>
+
+						<ul>
+						<li>All charges are outlined in rate confirmations</li>
+						<li>Payments must follow agreed terms</li>
+						<li>Late payments may result in service suspension</li>
+						<li>Rates may change due to fuel surcharges or market conditions</li>
+						<li>Disputed charges must be reported within 5 business days</li>
+						</ul>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>9. Cancellations and No-Show Policy</h3>
+
+						<p>
+						If a client cancels a booked load or fails to have freight ready at the scheduled time, cancellation fees or carrier costs may apply.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>10. Limitation of Liability</h3>
+
+						<p>
+						Backup Logistics LLC shall not be liable for indirect or consequential damages including freight loss beyond coverage limits, delays due to weather or accidents, third-party carrier actions, or service interruptions.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>11. Indemnification</h3>
+
+						<p>
+						You agree to indemnify and hold harmless Backup Logistics LLC from any claims or damages arising from your misuse of services, breach of terms, or violation of laws.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>12. Intellectual Property</h3>
+
+						<p>
+						All content including text, graphics, logos, and branding is the exclusive property of Backup Logistics LLC and may not be reproduced without written consent.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>13. Privacy Policy</h3>
+
+						<p>
+						Your use of this Site is also governed by our Privacy Policy available at:
+						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+						backuplogistics.us/privacy-policy
+						</a>
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>14. SMS and Text Message Communications</h3>
+
+						<p>
+						By providing your phone number, you consent to receive operational SMS messages related to freight activity.
+						</p>
+
+						<p>
+						No mobile opt-in or text message consent will be shared with third parties or affiliates.
+						</p>
+
+						<p>
+						Reply STOP to opt out. Reply HELP for support. Message and data rates may apply.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>17. Governing Law</h3>
+
+						<p>
+						These Terms are governed by the laws of the State of Texas. Disputes shall be handled in courts located in Harris County, Texas.
+						</p>
+						</div>
+
+
+						<div className="policy-section">
+						<h3>21. Contact Information</h3>
+
+						<p>
+						Backup Logistics LLC <br/>
+						Website: backuplogistics.us <br/>
+						Email: shahzaib@backuplogistics.us <br/>
+						Location: Houston, Texas, United States
+						</p>
+
+						<p><b>Last updated:</b> March 10, 2026</p>
+						</div>
+
+						</Dialog>
+
 					</Box>
 				</Grid>
 				{/* <Grid item lg={1.5} xl={1.5} md={12} sm={12} xs={12}></Grid> */}
