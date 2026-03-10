@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
 					columnGap={2}
 				>
 					{/* <Grid item lg={1} xl={1} md={1} sm={1} xs={1}></Grid> */}
-					<Grid size={{lg:7.8, xl:7.8, md:6, sm:12, xs:12}}>
+					<Grid size={{lg:7.8, xl:7.4, md:6, sm:12, xs:12}}>
 					{/* <Grid
 						item
 						lg={7.8}
@@ -191,14 +191,14 @@ const Contact: React.FC = () => {
 								severity="success"
 								label="Submit"
 								className="p-button-raised"
-								style={{ marginBottom: "1.5rem"}}
+								style={{ marginBottom: "1.5rem", marginLeft: "2.5rem", marginTop: "1.5rem"}}
 								size="small"
 							/>
 						</form>
 						<Toast ref={toast} />
 					</Grid>
 					{/* <Grid item lg={4} xl={4} md={4} sm={10} xs={12}> */}
-					<Grid size={{lg:5, xl:3.5, md:4, sm:10, xs:12}} sx={{ ml: 8 }}>
+					<Grid size={{lg:5, xl:3.9, md:4, sm:10, xs:12}} sx={{ ml: 8 }}>
 						<Card>
 							{/* <div className="card-detail"> */}
 							<div className="flex pl-3 align-items-center pb-6">

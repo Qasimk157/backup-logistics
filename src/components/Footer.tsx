@@ -57,7 +57,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 					}}
 				> */}
 				<Grid
-					size={{ lg: 3, xl: 3, md: 3, sm: 12, xs: 12 }}
+					size={{ lg: 3, xl: 3.8, md: 3, sm: 12, xs: 12 }}
 					sx={{
 						borderLeft: "1px solid rgba(255,255,255,.3)",
 						padding: "0 15px 50px 15px",
