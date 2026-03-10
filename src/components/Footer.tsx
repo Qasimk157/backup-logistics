@@ -157,153 +157,176 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							Legal
 						</Typography>
 						<Typography
-							sx={{
-								paddingBottom: "16px",
-								cursor: "pointer",
-								"&.MuiTypography-root:hover": { color: "#ef8410" },
-							}}
-							variant="body1"
-							onClick={() => setVisiblePrivacyPolicy(true)}
-						>
-							Privacy Policy
-						</Typography>
-						<Dialog
-								header="Privacy Policy"
-								footer={footerContent}
-								visible={visiblePrivacyPolicy}
-								className="privacy-dialog"
-								style={{ width: "55vw" }}
-								onHide={() => setVisiblePrivacyPolicy(false)}
-							>
+  sx={{
+    paddingBottom: "16px",
+    cursor: "pointer",
+    "&:hover": { color: "#ef8410" }
+  }}
+  variant="body1"
+  onClick={() => setVisiblePrivacyPolicy(true)}
+>
+  Privacy Policy
+</Typography>
 
-							<div className="policy-section">
-							<h3>Information We Collect</h3>
+<Dialog
+  header="PRIVACY POLICY"
+  footer={footerContent}
+  visible={visiblePrivacyPolicy}
+  style={{ width: "55vw" }}
+  onHide={() => setVisiblePrivacyPolicy(false)}
+>
 
-							<ul>
-							<li>Full name and business name</li>
-							<li>Email address</li>
-							<li>Mobile phone number</li>
-							<li>Company address and location</li>
-							<li>Freight and shipment details you provide</li>
-							<li>Communication records (calls, texts, emails)</li>
-							</ul>
+<div className="policy-word">
 
-							<p>
-							Backup Logistics LLC collects personal information when you interact with
-							our website, contact forms, or services to ensure efficient freight
-							logistics and communication.
-							</p>
-							</div>
+<p><b>Backup Logistics LLC</b></p>
+
+<p>
+<b>Effective Date:</b> March 10, 2026 | 
+<a href="https://backuplogistics.us" target="_blank">
+ backuplogistics.us
+</a>
+</p>
 
 
-							<div className="policy-section">
-							<h3>How We Use Your Information</h3>
+<p className="section-title">1. Information We Collect</p>
+{/* <h4>1. Information We Collect</h4> */}
 
-							<ul>
-							<li>Dispatching and coordinating freight shipments</li>
-							<li>Sending load confirmations and operational updates</li>
-							<li>Communicating via SMS, phone, or email</li>
-							<li>Processing payments and managing accounts</li>
-							<li>Complying with legal and regulatory obligations</li>
-							</ul>
-							</div>
+<p>
+Backup Logistics LLC collects the following personal information when you
+interact with our website, contact forms, or services:
+</p>
 
-
-							<div className="policy-section">
-							<h3>SMS / Text Message Communications</h3>
-
-							<p>
-							If you provide your mobile phone number, you may receive SMS messages from
-							Backup Logistics LLC related to freight operations.
-							</p>
-
-							<ul>
-							<li>Messages are operational and informational only</li>
-							<li>No mobile opt-in data will be shared with third parties</li>
-							<li>Reply <b>STOP</b> to opt out anytime</li>
-							<li>Reply <b>HELP</b> for support</li>
-							<li>Message and data rates may apply</li>
-							</ul>
-
-							<p>
-							Visit:
-							<a href="https://backuplogistics.us/sms-terms" target="_blank">
-							backuplogistics.us/sms-terms
-							</a>
-							</p>
-							</div>
+<p>
+Full name and business name<br/>
+Email address<br/>
+Mobile phone number<br/>
+Company address and location<br/>
+Freight and shipment details you provide<br/>
+Communication records (calls, texts, emails)
+</p>
 
 
-							<div className="policy-section">
-							<h3>How We Share Your Information</h3>
 
-							<ul>
-							<li>
-							With trusted technology providers (e.g., RingCentral for SMS delivery)
-							</li>
-							<li>
-							With carriers or shippers involved in freight coordination
-							</li>
-							<li>
-							When required by law or regulatory authorities
-							</li>
-							</ul>
+<p className="section-title">2. How We Use Your Information</p>
 
-							<p>
-							We <b>do not sell, rent, or trade</b> your personal information.
-							Mobile SMS consent data is never shared with third parties for marketing.
-							</p>
-							</div>
+<p>
+We use your information solely to provide freight logistics and transportation
+services, including:
+</p>
+
+<p>
+Dispatching and coordinating freight shipments<br/>
+Sending load confirmations, rate confirmations, and operational updates<br/>
+Communicating via SMS, phone, or email for dispatch purposes<br/>
+Processing payments and managing business accounts<br/>
+Complying with legal and regulatory obligations
+</p>
 
 
-							<div className="policy-section">
-							<h3>Data Security</h3>
 
-							<p>
-							We implement technical and organizational safeguards to protect your
-							personal information from unauthorized access, misuse, or disclosure.
-							While we strive to protect your data, no internet transmission method
-							is completely secure.
-							</p>
-							</div>
+<p className="section-title">3. SMS / Text Message Communications</p>
+
+<p>
+If you provide your mobile phone number, you may receive SMS text messages from
+Backup Logistics LLC related to your freight operations. These messages are
+strictly operational and informational in nature.
+</p>
+
+<p>
+No mobile opt-in or text message consent will be shared with third parties
+or affiliates.
+</p>
+
+<p>
+You can opt out of SMS messages at any time by replying STOP to any message.
+Reply HELP for support. Message and data rates may apply. Messaging frequency
+varies based on active operations.
+</p>
+
+<p>
+Visit:
+<a href="https://backuplogistics.us/sms-terms" target="_blank">
+ backuplogistics.us/sms-terms
+</a>
+</p>
 
 
-							<div className="policy-section">
-							<h3>Your Rights</h3>
 
-							<ul>
-							<li>Request access to your personal data</li>
-							<li>Request corrections or deletion</li>
-							<li>Opt-out of SMS communications anytime</li>
-							<li>Update your contact preferences</li>
-							</ul>
-							</div>
+<p className="section-title">4. How We Share Your Information</p>
+
+<p>
+We do not sell, rent, or trade your personal information to third parties.
+Your information may be shared only in the following limited circumstances:
+</p>
+
+<p>
+With technology service providers (e.g., RingCentral for SMS delivery) who are
+bound by confidentiality agreements<br/>
+
+With carriers or shippers directly involved in your freight coordination<br/>
+
+When required by law, court order, or government regulation
+</p>
+
+<p>
+We do not share your mobile opt-in data or SMS consent information with any
+third party or affiliate for marketing purposes.
+</p>
 
 
-							<div className="policy-section contact-section">
-							<h3>Contact Us</h3>
 
-							<p>If you have questions about this Privacy Policy:</p>
+<p className="section-title">5. Data Security</p>
 
-							<p>
-							<b>Backup Logistics LLC</b><br/>
+<p>
+We take reasonable technical and organizational measures to protect your
+personal information from unauthorized access, loss, or disclosure.
+However, no method of transmission over the internet is 100% secure.
+</p>
 
-							<a href="https://backuplogistics.us">
-							backuplogistics.us
-							</a>
-							<br/>
 
-							<a href="mailto:Shahzaib@backuplogistics.us">
-							Shahzaib@backuplogistics.us
-							</a>
-							<br/>
 
-							Houston, Texas, United States
-							</p>
+<p className="section-title">6. Your Rights</p>
 
-							</div>
+<p>
+You have the right to:
+</p>
 
-							</Dialog>
+<p>
+Request access to the personal information we hold about you<br/>
+Request correction or deletion of your information<br/>
+Opt out of SMS communications at any time by replying STOP<br/>
+Contact us to update your preferences or information
+</p>
+
+
+
+<p className="section-title">7. Contact Us</p>
+
+<p>
+If you have questions about this Privacy Policy or how we handle your data:
+</p>
+
+<p>
+Backup Logistics LLC<br/>
+
+Website:
+<a href="https://backuplogistics.us">
+ backuplogistics.us
+</a><br/>
+
+Email:
+<a href="mailto:phone@backuplogistics.us">
+ phone@backuplogistics.us
+</a><br/>
+
+Location: Houston, Texas, United States
+</p>
+
+<p><b>Last updated:</b> March 10, 2026</p>
+
+</div>
+
+</Dialog>
 
 						<Typography
 							sx={{

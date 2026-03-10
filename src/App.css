@@ -37,6 +37,21 @@
   }
 }
 
+.policy-word{
+  font-size:14px;
+  line-height:1.7;
+  color:#333;
+}
+
+.policy-word p{
+  margin-bottom:12px;
+}
+
+.section-title{
+  font-weight:600;
+  margin-top:18px;
+}
+
 
 .privacy-dialog .p-dialog-content{
     max-height: 70vh;
