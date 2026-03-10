@@ -51,7 +51,7 @@ export default function VerticalDemo() {
                 numScroll={1}
                 className="custom-carousel"
                 circular
-                autoplayInterval={2000}
+                autoplayInterval={2500}
                 itemTemplate={productTemplate}
             />
         </div>
