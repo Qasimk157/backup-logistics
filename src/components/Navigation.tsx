@@ -19,7 +19,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import taxslipsLogo from "../images/taxslip-logo.png";
 import "./navigation.css";
-
+console.log("dfssdfs")
 interface INavbarCallbacks {
   onHomeClick: () => void;
   onAboutClick: () => void;
