@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import taxslipsLogo from "../images/taxslip-logo.png";
-import "./navigation.css";
+import "./Navigation.css";
 
 interface INavbarCallbacks {
   onHomeClick: () => void;
