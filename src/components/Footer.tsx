@@ -79,7 +79,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							Ewing, New Jersey, United States
 						</Typography>
 						<Typography sx={{ margin: "24px 0 16px 0" }}>
-							(+92) 304-9253256
+							609-900-4243
 						</Typography>
 						<Typography sx={{ margin: "24px 0 16px 0" }}>
 							qasimkhanneng@gmail.com

@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
 					}}
 				>
 					We love our customers, so feel free to call us during normal business hours or <br />
-					by calling <strong>(+92) 348-1735864</strong> <br />
+					by calling <strong>609-900-4243</strong> <br />
 					with your comments, questions, concerns, or to inquire about our
 					products and services.
 				</Typography>
@@ -218,7 +218,7 @@ const Contact: React.FC = () => {
 									style={{ color: "rgb(0, 87, 219)" }}
 								></i>
 								<div className="pl-4 pr-4">
-									<strong>(+92) 304-9253256</strong>
+									<strong>609-900-4243</strong>
 								</div>
 							</div>
 							<div className="flex pl-3 align-items-center">
