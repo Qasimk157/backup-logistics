@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Carousel } from "primereact/carousel";
 import { ProductService } from "./ProductService";
-import "./exploreJourneyData.css";
+import "./explorejourneyData.css";
 
 export default function ExploreJourney() {
   const [products, setProducts] = useState<any[]>([]);
