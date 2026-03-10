@@ -333,176 +333,140 @@ Location: Houston, Texas, United States
 							sx={{
 								paddingBottom: "16px",
 								cursor: "pointer",
-								"&.MuiTypography-root:hover": { color: "#ef8410" },
+								"&:hover": { color: "#ef8410" },
 							}}
 							variant="body1"
 							onClick={() => setSmsVisibleTermsAndConditions(true)}
-						>
+							>
 							SMS Terms of Service
-						</Typography>
-						<Dialog
-							header="SMS Terms of Service"
+							</Typography>
+
+							<Dialog
+							header="SMS TERMS OF SERVICE"
 							footer={footerContent}
-							visible={visibleTermsAndConditions}
-							className="privacy-dialog"
+							visible={smsvisibleTermsAndConditions}
 							style={{ width: "55vw" }}
 							onHide={() => setSmsVisibleTermsAndConditions(false)}
-						>
+							>
 
-						<div className="policy-section">
+							<div className="policy-word">
 
-						<h3>Backup Logistics LLC</h3>
+							<p><b>Backup Logistics LLC</b></p>
 
-						<p>
-						<b>Effective Date:</b> March 9, 2026 <br/>
-						<a href="https://backuplogistics.us" target="_blank">
-						backuplogistics.us
-						</a>
-						</p>
+							<p>
+							<b>Effective Date:</b> March 10, 2026 | 
+							<a href="https://backuplogistics.us" target="_blank">
+							backuplogistics.us
+							</a>
+							</p>
 
-						<p>
-						If you consent to receive conversational and informational SMS from
-						Backup Logistics LLC, you agree to receive dispatch updates,
-						load confirmations, operational alerts, and coordination messages.
-						</p>
+							<p>
+							If you consent to receive conversational and informational SMS from
+							Backup Logistics LLC, you agree to receive dispatch updates, load
+							confirmations, operational alerts, and coordination messages SMS from us.
+							Reply STOP to opt-out; Reply HELP for support; Message and data rates may
+							apply; Messaging frequency may vary.
+							</p>
 
-						<ul>
-						<li>Reply <b>STOP</b> to opt-out</li>
-						<li>Reply <b>HELP</b> for support</li>
-						<li>Message and data rates may apply</li>
-						<li>Messaging frequency may vary</li>
-						</ul>
-
-						<p>
-						Visit our policy:
-						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
-						backuplogistics.us/privacy-policy
-						</a>
-						</p>
-
-						</div>
+							<p>
+							Visit 
+							<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+							backuplogistics.us/privacy-policy
+							</a>
+							to see our Privacy Policy and Terms and Conditions.
+							</p>
 
 
-						<div className="policy-section">
+							<p className="section-title">1. Program Description</p>
 
-						<h3>Program Description</h3>
+							<p>
+							Backup Logistics LLC sends the following types of SMS messages to carriers,
+							drivers, and business partners:
+							</p>
 
-						<p>
-						Backup Logistics LLC sends the following types of SMS messages to
-						carriers, drivers, and business partners:
-						</p>
+							<p>
+							Conversational messages: Two-way dispatch coordination and load negotiations<br/>
+							Informational messages: Load confirmations, pickup/delivery updates, rate
+							confirmations, schedule changes, and operational alerts
+							</p>
 
-						<ul>
-						<li>
-						<b>Conversational messages:</b> Two-way dispatch coordination and
-						load negotiations
-						</li>
-
-						<li>
-						<b>Informational messages:</b> Load confirmations, pickup/delivery
-						updates, rate confirmations, schedule changes, and operational alerts
-						</li>
-						</ul>
-
-						<p>
-						We do <b>not send promotional or marketing SMS messages.</b>
-						</p>
-
-						</div>
+							<p>
+							We do not send promotional or marketing SMS messages.
+							</p>
 
 
-						<div className="policy-section">
+							<p className="section-title">2. Consent and Opt-In</p>
 
-						<h3>Consent and Opt-In</h3>
+							<p>
+							You consent to receive SMS messages from Backup Logistics LLC by:
+							</p>
 
-						<p>You consent to receive SMS messages from Backup Logistics LLC by:</p>
+							<p>
+							Checking the SMS consent box on our website contact or onboarding form<br/>
+							Providing your phone number verbally or in writing during carrier or driver onboarding<br/>
+							Signing a rate confirmation or carrier agreement that includes your mobile number
+							</p>
 
-						<ul>
-						<li>Checking the SMS consent box on our website contact form</li>
-						<li>Providing your phone number during carrier or driver onboarding</li>
-						<li>Signing a rate confirmation or carrier agreement</li>
-						</ul>
-
-						<p>
-						Consent is not required as a condition of using our services.
-						</p>
-
-						</div>
+							<p>
+							Consent is not required as a condition of using our services.
+							</p>
 
 
-						<div className="policy-section">
+							<p className="section-title">3. Opt-Out</p>
 
-						<h3>Opt-Out</h3>
+							<p>
+							Reply STOP to any message to unsubscribe immediately. You will receive one
+							final confirmation. No further messages will be sent to that number.
+							</p>
 
-						<p>
-						Reply <b>STOP</b> to any message to unsubscribe immediately.
-						You will receive one final confirmation message and no further
-						messages will be sent.
-						</p>
-
-						<p>
-						You may also opt out by emailing:
-						</p>
-
-						<a href="mailto:Shahzaib@backuplogistics.us">
-						Shahzaib@backuplogistics.us
-						</a>
-
-						</div>
+							<p>
+							You may also opt out by emailing
+							<a href="mailto:phone@backuplogistics.us">
+							phone@backuplogistics.us
+							</a>
+							with your number and request.
+							</p>
 
 
-						<div className="policy-section">
+							<p className="section-title">4. Help</p>
 
-						<h3>Help</h3>
-
-						<p>
-						Reply <b>HELP</b> to any message or contact us at:
-						</p>
-
-						<a href="mailto:Shahzaib@backuplogistics.us">
-						Shahzaib@backuplogistics.us
-						</a>
-
-						</div>
+							<p>
+							Reply HELP to any message or contact us at
+							<a href="mailto:phone@backuplogistics.us">
+							phone@backuplogistics.us
+							</a>
+							for support.
+							</p>
 
 
-						<div className="policy-section">
+							<p className="section-title">5. Message Frequency & Rates</p>
 
-						<h3>Message Frequency & Rates</h3>
-
-						<p>
-						Message frequency varies depending on your active loads
-						and dispatch activity.
-						</p>
-
-						<p>
-						Message and data rates may apply. Please contact your
-						wireless carrier for details.
-						</p>
-
-						</div>
+							<p>
+							Message frequency varies based on your active load and dispatch activity.
+							Message and data rates may apply. Contact your wireless carrier for details.
+							</p>
 
 
-						<div className="policy-section">
+							<p className="section-title">6. Privacy</p>
 
-						<h3>Privacy</h3>
+							<p>
+							No mobile opt-in or text message consent will be shared with third parties
+							or affiliates.
+							</p>
 
-						<p>
-						No mobile opt-in or SMS consent data will be shared with
-						third parties or affiliates.
-						</p>
+							<p>
+							View our full Privacy Policy at
+							<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+							backuplogistics.us/privacy-policy
+							</a>
+							</p>
 
-						<p>
-						View our Privacy Policy:
-						</p>
 
-						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
-						backuplogistics.us/privacy-policy
-						</a>
+							<p><b>Last updated:</b> March 9, 2026</p>
 
-						</div>
+							</div>
 
-						</Dialog>
+							</Dialog>
 
 						<Typography
 							sx={{
@@ -518,7 +482,7 @@ Location: Houston, Texas, United States
 						<Dialog
 							header="Website Contact Form — SMS Consent Language"
 							footer={footerContent}
-							visible={smsvisibleTermsAndConditions}
+							visible={visibleTermsAndConditions}
 							className="privacy-dialog"
 							style={{ width: "60vw" }}
 							onHide={() => setVisibleTermsAndConditions(false)}
