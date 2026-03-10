@@ -175,7 +175,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
   header="PRIVACY POLICY"
   footer={footerContent}
   visible={visiblePrivacyPolicy}
-  style={{ width: "55vw" }}
+  style={{ width: "50vw" }}
   onHide={() => setVisiblePrivacyPolicy(false)}
 >
 
