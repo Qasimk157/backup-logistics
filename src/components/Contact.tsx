@@ -1,15 +1,10 @@
 import {
-	AlertColor,
-	Grid,
-	Typography,
-	TextField,
-	useTheme,
-	Backdrop,
-	CircularProgress,
+  Backdrop,
+  CircularProgress,
+  useTheme,
 } from "@mui/material";
-import axios, { AxiosResponse } from "axios";
 import React, { useRef, useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
@@ -17,191 +12,225 @@ import { Toast } from "primereact/toast";
 import { Message } from "primereact/message";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-// import { Alert } from 'primereact/alert';
-import { Card } from "primereact/card";
 import "./contact.css";
 import http from "../common/http-common";
 
 interface FormData {
-	email: string;
-	fullname: string;
-	phone?: string;
-	message?: string;
+  email: string;
+  fullname: string;
+  phone?: string;
+  message?: string;
 }
 
 const schema = yup.object().shape({
-	email: yup.string().email("Invalid email").required("Email is required"),
-	fullname: yup.string().required("Full Name is required"),
-	phone: yup.string(),
-	message: yup.string(),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  fullname: yup.string().required("Full Name is required"),
+  phone: yup.string(),
+  message: yup.string(),
 });
+
 const Contact: React.FC = () => {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<FormData | any>({
-		resolver: yupResolver(schema),
-	});
-	const [toastMessage, setToastMessage] = useState("");
-	const [isLoading, setIsLoading] = useState(false);
-	const toast = useRef<any>(null);
-	const onSubmit = async (data: FormData) => {
-		// Handle form submission logic here
-		console.log("data", data);
-		let payload = {
-			email: data.email,
-			name: data.fullname,
-			phoneNo: data.phone,
-			message: data.message,
-		};
-		setIsLoading(true);
-		try {
-			// Perform POST request using Axios
-			const response = await http.post(
-				"https://swv3.taxslips.com/send-user-feedback",
-				payload
-			);
-			console.log("response", response);
+  const {
+	register,
+	handleSubmit,
+	reset,
+	formState: { errors },
+  } = useForm<FormData | any>({
+	resolver: yupResolver(schema),
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const toast = useRef<any>(null);
 
-			// Display success message
-			setToastMessage(`Success: ${response.data.message}`);
-			toast.current.show({
-				severity: "success",
-				summary: "Success",
-				detail: response.data.message,
-			});
-		} catch (error: any) {
-			console.log("error", error);
-			// Handle error and display error message
-			const errorMessage =
-				error.response?.data?.message ||
-				error.response?.data?.detail ||
-				"Something went wrong";
-			setToastMessage(`Error: ${errorMessage}`);
-			toast.current.show({
-				severity: "error",
-				summary: "Error",
-				detail: errorMessage,
-			});
-		} finally {
-			setIsLoading(false);
-		}
+  const onSubmit = async (data: FormData) => {
+	let payload = {
+	  email: data.email,
+	  name: data.fullname,
+	  phoneNo: data.phone,
+	  message: data.message,
 	};
+	setIsLoading(true);
+	try {
+	  const response = await http.post(
+		"https://swv3.taxslips.com/send-user-feedback",
+		payload
+	  );
+	  toast.current.show({
+		severity: "success",
+		summary: "Success",
+		detail: response.data.message,
+	  });
+	  reset();
+	} catch (error: any) {
+	  const errorMessage =
+		error.response?.data?.message ||
+		error.response?.data?.detail ||
+		"Something went wrong";
+	  toast.current.show({
+		severity: "error",
+		summary: "Error",
+		detail: errorMessage,
+	  });
+	} finally {
+	  setIsLoading(false);
+	}
+  };
 
-	const theme = useTheme();
-	return (
-		<>
-			<Backdrop
-				sx={{ zIndex: theme.zIndex.drawer + 1 }}
-				open={isLoading}
-				data-testid={""}
-			>
-				<CircularProgress color="inherit" />
-			</Backdrop>
-			{/* // <div className='lg:mx-8 xl:mx-8 md:xm-8 sm:mx-8 xs:mx-0' style={{margin:"0 3rem"}}> */}
-			<div>
-				<h1 style={{ fontWeight: "bold", textAlign: "center" }}>Drop us a line!</h1>
-				<Typography
-					sx={{
-						textAlign: "center",
-						paddingBottom: "0.5rem",
-						color: "#797979",
-					}}
-				>
-					We love our customers, so feel free to call us during normal business hours or <br />
-					by calling <strong>609-900-4243</strong> <br />
-					with your comments, questions, concerns, or to inquire about our
-					products and services.
-				</Typography>
-				<Grid
-					container
-					sx={{ paddingTop: "1.5rem!important", justifyContent: "center" }}
-					columnGap={2}
-				>
-					{/* <Grid item lg={1} xl={1} md={1} sm={1} xs={1}></Grid> */}
-					<Grid size={{lg:7.8, xl:7.4, md:6, sm:12, xs:12}}>
-					{/* <Grid
-						item
-						lg={7.8}
-						xl={7.8}
-						md={6}
-						sm={12}
-						xs={12}
-						// sx={{ padding: "10px 25px" }}
-					> */}
-						<form onSubmit={handleSubmit(onSubmit)}>
-							<div className="p-field">
-								<label htmlFor="email">Your Email*</label>
-								<InputText
-									id="email"
-									type="email"
-									{...register("email")}
-									className={errors.email ? "p-invalid" : ""}
-									style={{ fontSize: "12px" }}
-									placeholder="Enter email"
-								/>
-								{errors.email && (
-									<Message
-										severity="error"
-										text={String(errors.email.message)}
-									/>
-								)}
-							</div>
-							<div className="p-field">
-								<label htmlFor="fullname">Full Name*</label>
-								<InputText
-									id="fullname"
-									type="text"
-									{...register("fullname")}
-									className={errors.fullname ? "p-invalid" : ""}
-									style={{ fontSize: "12px" }}
-									placeholder="Enter name"
-								/>
-								{errors.fullname && (
-									<Message
-										severity="error"
-										text={String(errors.fullname.message)}
-									/>
-								)}
-							</div>
-							<div className="p-field">
-								<label htmlFor="phone">Your Phone</label>
-								<InputText
-									id="phone"
-									type="tel"
-									{...register("phone")}
-									className={errors.phone ? "p-invalid" : ""}
-									style={{ fontSize: "12px" }}
-									placeholder="Enter phone"
-								/>
-							</div>
-							<div className="p-field">
-								<label htmlFor="message">Your Message</label>
-								<InputTextarea
-									id="message"
-									{...register("message")}
-									className={errors.message ? "p-invalid" : ""}
-									style={{ fontSize: "12px" }}
-									placeholder="Enter something"
-								/>
-							</div>
-							<Button 
-								type="submit"
-								severity="success"
-								label="Submit"
-								className="p-button-raised"
-								style={{ marginBottom: "1.5rem", marginLeft: "2.5rem", marginTop: "1.5rem"}}
-								size="small"
-							/>
-						</form>
-						<Toast ref={toast} />
-					</Grid>
-					
-				</Grid>
+  const theme = useTheme();
+
+  return (
+	<>
+	  <Backdrop sx={{ zIndex: theme.zIndex.drawer + 1 }} open={isLoading}>
+		<CircularProgress color="inherit" />
+	  </Backdrop>
+	  <Toast ref={toast} />
+
+	  <section className="bl-contact-section">
+		<div className="bl-contact-bg-dots" />
+
+		<div className="bl-contact-container">
+		  {/* ── LEFT: Info ── */}
+		  <div className="bl-contact-info">
+			<div className="bl-badge">
+			  <span className="bl-badge-dot" />
+			  Available Now
 			</div>
-		</>
-	);
+
+			<h2 className="bl-contact-title">
+			  Let's Move Your<br />
+			  Freight <em>Forward</em>
+			</h2>
+
+			<p className="bl-contact-subtitle">
+			  Have a shipment to book, a question about our services, or need a
+			  quick quote? Reach out — our dispatch team is ready to help.
+			</p>
+
+			<div className="bl-detail-cards">
+			  <a href="tel:6099004245" className="bl-detail-card">
+				<div className="bl-detail-icon">
+				  <i className="pi pi-phone" />
+				</div>
+				<div className="bl-detail-text">
+				  <span className="bl-detail-label">Call Us</span>
+				  <span className="bl-detail-value">(609) 900-4245</span>
+				</div>
+				<i className="pi pi-arrow-right bl-detail-arrow" />
+			  </a>
+
+			  <a href="mailto:Shahzaib@backuplogistics.us" className="bl-detail-card">
+				<div className="bl-detail-icon">
+				  <i className="pi pi-envelope" />
+				</div>
+				<div className="bl-detail-text">
+				  <span className="bl-detail-label">Email Us</span>
+				  <span className="bl-detail-value">Shahzaib@backuplogistics.us</span>
+				</div>
+				<i className="pi pi-arrow-right bl-detail-arrow" />
+			  </a>
+
+			  <div className="bl-detail-card">
+				<div className="bl-detail-icon">
+				  <i className="pi pi-map-marker" />
+				</div>
+				<div className="bl-detail-text">
+				  <span className="bl-detail-label">Headquarters</span>
+				  <span className="bl-detail-value">1617 Fannin St, Houston TX 77002</span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		  {/* ── RIGHT: Form ── */}
+		  <div className="bl-contact-form-wrap">
+			<div className="bl-form-card">
+			  <h3 className="bl-form-heading">Send a Message</h3>
+			  <p className="bl-form-subtext">
+				We'll get back to you within 1 business hour.
+			  </p>
+
+			  <form onSubmit={handleSubmit(onSubmit)} className="bl-form">
+				<div className="bl-form-row">
+				  <div className="bl-field">
+					<label htmlFor="fullname" className="bl-label">
+					  Full Name <span className="bl-required">*</span>
+					</label>
+					<InputText
+					  id="fullname"
+					  type="text"
+					  {...register("fullname")}
+					  className={`bl-input ${errors.fullname ? "p-invalid" : ""}`}
+					  placeholder="John Doe"
+					/>
+					{errors.fullname && (
+					  <Message
+						severity="error"
+						text={String(errors.fullname.message)}
+						className="bl-error-msg"
+					  />
+					)}
+				  </div>
+
+				  <div className="bl-field">
+					<label htmlFor="email" className="bl-label">
+					  Email <span className="bl-required">*</span>
+					</label>
+					<InputText
+					  id="email"
+					  type="email"
+					  {...register("email")}
+					  className={`bl-input ${errors.email ? "p-invalid" : ""}`}
+					  placeholder="john@company.com"
+					/>
+					{errors.email && (
+					  <Message
+						severity="error"
+						text={String(errors.email.message)}
+						className="bl-error-msg"
+					  />
+					)}
+				  </div>
+				</div>
+
+				<div className="bl-field">
+				  <label htmlFor="phone" className="bl-label">Phone</label>
+				  <InputText
+					id="phone"
+					type="tel"
+					{...register("phone")}
+					className={`bl-input ${errors.phone ? "p-invalid" : ""}`}
+					placeholder="(555) 000-0000"
+				  />
+				</div>
+
+				<div className="bl-field">
+				  <label htmlFor="message" className="bl-label">
+					Message <span className="bl-required">*</span>
+				  </label>
+				  <InputTextarea
+					id="message"
+					{...register("message")}
+					className={`bl-input bl-textarea ${errors.message ? "p-invalid" : ""}`}
+					placeholder="Tell us about your shipment or inquiry..."
+					rows={4}
+					autoResize
+				  />
+				</div>
+
+				<Button
+				  type="submit"
+				  className="bl-submit-btn"
+				  loading={isLoading}
+				>
+				  <i className="pi pi-send" style={{ marginRight: "8px" }} />
+				  Send Message
+				</Button>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	</>
+  );
 };
 
 export default Contact;

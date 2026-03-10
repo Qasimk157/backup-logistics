@@ -1,0 +1,376 @@
+/* ═══════════════════════════════════════════════════════════
+   BACKUP LOGISTICS — About Section
+   
+   Design: Same dark cinematic system
+   Uses shared CSS vars from contact.css (:root)
+   Fonts: Outfit + DM Sans (loaded in index.html)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── SECTION ─── */
+.bl-about-section {
+  position: relative;
+  padding: 100px 24px;
+  background: #040f0a;
+  overflow: hidden;
+}
+
+.bl-about-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 20%, rgba(20, 105, 75, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(62, 234, 166, 0.05) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* ─── HEADER ─── */
+.bl-about-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 60px;
+  animation: blAboutIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes blAboutIn {
+  from { opacity: 0; transform: translateY(35px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bl-about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bl-accent, #3eeaa6);
+  margin-bottom: 20px;
+}
+
+.bl-about-badge-line {
+  display: inline-block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--bl-accent, #3eeaa6);
+  opacity: 0.5;
+}
+
+.bl-about-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.08;
+  margin: 0 0 16px;
+  letter-spacing: -1.5px;
+}
+
+.bl-about-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--bl-accent, #3eeaa6), var(--bl-gold, #f0c75e));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bl-about-subtitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── CONTENT GRID ─── */
+.bl-about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ─── LEFT: Mission Cards ─── */
+.bl-about-content {
+  animation: blAboutIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.bl-about-mission-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bl-accent, #3eeaa6);
+  margin-bottom: 24px;
+  padding: 6px 14px 6px 10px;
+  background: rgba(62, 234, 166, 0.06);
+  border: 1px solid rgba(62, 234, 166, 0.1);
+  border-radius: 100px;
+}
+
+.bl-about-mission-label i {
+  font-size: 13px;
+}
+
+.bl-about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bl-about-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: all 0.35s ease;
+  animation: blCardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes blCardIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.bl-about-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(62, 234, 166, 0.12);
+  transform: translateX(6px);
+}
+
+.bl-about-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--bl-green-800, #0e4d37), var(--bl-green-700, #14694b));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bl-accent, #3eeaa6);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.bl-about-card-body {
+  flex: 1;
+}
+
+.bl-about-card-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.bl-about-card-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── RIGHT: Image Column ─── */
+.bl-about-image-col {
+  animation: blAboutIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.bl-about-image-wrap {
+  position: relative;
+}
+
+.bl-about-image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  background: radial-gradient(
+    ellipse,
+    rgba(62, 234, 166, 0.1) 0%,
+    rgba(20, 105, 75, 0.05) 40%,
+    transparent 70%
+  );
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.bl-about-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow:
+    0 20px 56px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bl-about-image-wrap:hover .bl-about-image {
+  transform: translateY(-4px);
+}
+
+/* Experience Badge */
+.bl-about-exp-badge {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: rgba(11, 61, 44, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(62, 234, 166, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  animation: blBadgeFloat 3s ease-in-out infinite;
+}
+
+@keyframes blBadgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+.bl-about-exp-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--bl-accent, #3eeaa6), var(--bl-gold, #f0c75e));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.bl-about-exp-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Stats Row */
+.bl-about-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+}
+
+.bl-about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.bl-about-stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.bl-about-stat-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.bl-about-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .bl-about-section {
+    padding: 72px 20px;
+  }
+
+  .bl-about-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .bl-about-title {
+    font-size: 36px;
+  }
+
+  .bl-about-exp-badge {
+    top: -10px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bl-about-section {
+    padding: 56px 16px;
+  }
+
+  .bl-about-header {
+    margin-bottom: 40px;
+  }
+
+  .bl-about-title {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+  }
+
+  .bl-about-card {
+    padding: 16px;
+  }
+
+  .bl-about-image {
+    border-radius: 14px;
+  }
+
+  .bl-about-exp-badge {
+    top: -8px;
+    right: 4px;
+    padding: 10px 14px;
+  }
+
+  .bl-about-exp-number {
+    font-size: 20px;
+  }
+
+  .bl-about-stats {
+    gap: 20px;
+    padding: 16px 20px;
+  }
+
+  .bl-about-stat-number {
+    font-size: 20px;
+  }
+}

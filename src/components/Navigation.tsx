@@ -1,227 +1,209 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-	AppBar,
-	Toolbar,
-	Button,
-	Typography,
-	Container,
-	Box,
-	Drawer,
-	List,
-	ListItem,
-	ListItemText,
-	Divider,
-	IconButton,
-	useTheme,
-	useMediaQuery,
+  AppBar,
+  Toolbar,
+  Button,
+  Typography,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  IconButton,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import taxslipsLogo from "../images/taxslip-logo.png"
+import CloseIcon from "@mui/icons-material/Close";
+import taxslipsLogo from "../images/taxslip-logo.png";
+import "./navigation.css";
 
 interface INavbarCallbacks {
-	onHomeClick: () => void;
-	onAboutClick: () => void;
-	onFeaturesClick: () => void;
-	onPricingClick: () => void;
-	onSupportClick: () => void;
-	onContactClick: () => void;
+  onHomeClick: () => void;
+  onAboutClick: () => void;
+  onFeaturesClick: () => void;
+  onPricingClick: () => void;
+  onSupportClick: () => void;
+  onContactClick: () => void;
 }
+
 const Navigation: React.FC<INavbarCallbacks> = ({
-	onHomeClick,
-	onAboutClick,
-	onFeaturesClick,
-	onPricingClick,
-	onSupportClick,
-	onContactClick,
+  onHomeClick,
+  onAboutClick,
+  onFeaturesClick,
+  onPricingClick,
+  onSupportClick,
+  onContactClick,
 }) => {
-	const theme = useTheme();
-	// const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-	// const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
-	// const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
-	// const isMediumScreen = useMediaQuery(theme.breakpoints.between(1195, 1660));
-	// const margin = isSmallScreen ? 'auto' : isLargeScreen ? "0 235px 0 227px" : isExtraLargeScreen ? "0 235px 0 227px" : 'auto';
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-	const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-	const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
-	const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
-	const isMediumScreen1 = useMediaQuery(theme.breakpoints.between(1195, 1550));
-	const isMediumScreen2 = useMediaQuery(theme.breakpoints.between(1550, 1660));
-
-	let margin;
-
-	if (isSmallScreen) {
-		margin = 'auto';
-	} else if (isMediumScreen2) {
-		margin = '0 220px'; 
-	} else if (isMediumScreen1) {
-		margin = 'auto'; 
-	} else if (isLargeScreen || isExtraLargeScreen) {
-		margin = '0 235px 0 227px';
-	} else {
-		margin = 'auto';
-	}
-
-	
-	const [drawerOpen, setDrawerOpen] = useState(false);
-
-	const toggleDrawer = (open: boolean) => {
-		setDrawerOpen(open);
+  // Detect scroll for navbar background change
+  useEffect(() => {
+	const handleScroll = () => {
+	  setScrolled(window.scrollY > 30);
 	};
+	window.addEventListener("scroll", handleScroll, { passive: true });
+	return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-	const onSupportButtonClick = () => {
-		// Open the link in a new tab
-		window.open("https://help.taxslips.ca/portal/en/home", "_blank");
-	};
+  const toggleDrawer = (open: boolean) => {
+	setDrawerOpen(open);
+  };
 
-	const navLinks = [
-		{ label: "About Us", onClick: onHomeClick },
-		{ label: "Services", onClick: onAboutClick },
-		{ label: "Members Portal", onClick: onFeaturesClick },
-		{ label: "Legal", onClick: onPricingClick },
-		// { label: "Support", onClick: onSupportButtonClick },
-		{ label: "Profile", onClick: onContactClick },
-	];
+  const navLinks = [
+	{ label: "About Us", onClick: onHomeClick },
+	{ label: "Services", onClick: onAboutClick },
+	{ label: "Members Portal", onClick: onFeaturesClick },
+	{ label: "Legal", onClick: onPricingClick },
+	{ label: "Profile", onClick: onContactClick },
+  ];
 
-	const renderMobileMenu = (
-		<Drawer
-			anchor="right"
-			open={drawerOpen}
-			onClose={() => toggleDrawer(false)}
+  /* ── Mobile Drawer ── */
+  const renderMobileDrawer = (
+	<Drawer
+	  anchor="right"
+	  open={drawerOpen}
+	  onClose={() => toggleDrawer(false)}
+	  PaperProps={{
+		className: "bl-nav-drawer",
+	  }}
+	>
+	  {/* Drawer Header */}
+	  <Box className="bl-nav-drawer-header">
+		<img
+		  src={taxslipsLogo}
+		  alt="Backup Logistics"
+		  className="bl-nav-drawer-logo"
+		/>
+		<IconButton
+		  onClick={() => toggleDrawer(false)}
+		  className="bl-nav-drawer-close"
 		>
-			<List>
-				{navLinks.map((link, index) => (
-					<div key={index}>
-						<ListItem
-							button
-							onClick={() => {
-								link.onClick();
-								toggleDrawer(false);
-							}}
-						>
-							<ListItemText primary={link.label} />
-						</ListItem>
-						{index < navLinks.length - 1 && <Divider />}
-					</div>
-				))}
-				<Divider />
-				<Box sx={{ margin: "15px 30px" }}>
-					<Button variant="contained" sx={{ marginRight: "10px",  backgroundColor: "#15803d", // dark green
+		  <CloseIcon />
+		</IconButton>
+	  </Box>
 
-                "&:hover": {
+	  <Divider sx={{ borderColor: "rgba(255,255,255,0.06)" }} />
 
-                  backgroundColor: "#166534", // darker on hover
+	  {/* Nav Links */}
+	  <List className="bl-nav-drawer-list">
+		{navLinks.map((link, index) => (
+		  <ListItem
+			key={index}
+			button
+			onClick={() => {
+			  link.onClick();
+			  toggleDrawer(false);
+			}}
+			className="bl-nav-drawer-item"
+		  >
+			<ListItemText
+			  primary={link.label}
+			  primaryTypographyProps={{
+				className: "bl-nav-drawer-link-text",
+			  }}
+			/>
+		  </ListItem>
+		))}
+	  </List>
 
-                }, }}>
-						<Link
-							to="https://backup-logistics.vercel.app/#/taxslips_v5.com/"
-							style={{ color: "#fff", textDecoration: "none" }}
-						>
-							Login
-						</Link>
-					</Button>
-					<Button variant="contained">
-						<Link
-							to="https://backup-logistics.vercel.app/#/create-an-account"
-							style={{ color: "#fff", textDecoration: "none" }}
-						>
-							Sign Up
-						</Link>
-					</Button>
-				</Box>
-			</List>
-		</Drawer>
-	);
+	  <Divider sx={{ borderColor: "rgba(255,255,255,0.06)" }} />
 
-	return (
-		<AppBar
-			position="sticky"
-			style={{ top: 0, backgroundColor: "#fff", zIndex: 1000 }}
+	  {/* CTA Buttons */}
+	  <Box className="bl-nav-drawer-actions">
+		<Link
+		  to="https://backup-logistics.vercel.app/#/taxslips_v5.com/"
+		  className="bl-nav-btn-login-mobile"
+		  onClick={() => toggleDrawer(false)}
 		>
-			<Container sx={{margin:margin,minWidth:"-webkit-fill-available"}}>
-				<Toolbar>
-					<Typography variant="h6" component="div" sx={{ flexGrow: 1, display:"flex", alignItems:"center" }}>
-						<img
-							src={taxslipsLogo}
-							alt="Logo"
-							style={{ marginRight: '10px', height: '80px', width: 'auto' }}
-							/>
-					</Typography>
-					{/* Display menu icon for small screens */}
-					<IconButton
-						color="inherit"
-						aria-label="open drawer"
-						onClick={() => toggleDrawer(true)}
-						sx={{ display: { md: "none" }, color:"#000" }}
-					>
-						<MenuIcon />
-					</IconButton>
-					{/* Display regular navigation for medium and larger screens */}
-					<Box sx={{ display: { xs: "none", md: "flex" } }}>
-						{navLinks.map((link, index) => (
-							<Button key={index} color="inherit" onClick={link.onClick} sx={{color:"rgba(0,0,0,.5)","&.MuiButton-root:hover":{color:"#000"}}}>
-								{link.label}
-							</Button>
-						))}
-						<Box sx={{ margin: "0 0 0 4rem" }}>
-							<Button
-								// color="inherit"
-								variant="contained"
-								sx={{ marginRight: "10px",  backgroundColor: "#15803d", // dark green
-								"&:hover": {
-                  					backgroundColor: "#166534", // darker on hover
-                					}, }}
-							>
-								<Link
-									to="https://backup-logistics.vercel.app/#/taxslips_v5.com/"
-									style={{ color: "#fff", textDecoration: "none" }}
-								>
-									Login
-								</Link>
-							</Button>
-							<Button variant="contained"
-							sx={{ marginRight: "10px",  backgroundColor: "#15803d", // dark green
-								"&:hover": {
-                  					backgroundColor: "#166534", // darker on hover
-                					}, }}
-									>
-								<Link
-									to="https://backup-logistics.vercel.app/#/create-an-account"
-									style={{ color: "#fff", textDecoration: "none" }}
-								>
-									Sign Up
-								</Link>
-							</Button>
-						</Box>
-					</Box>
-					<Box sx={{ display: { xs: "flex", md: "none" } }}>
-						{renderMobileMenu}
-					</Box>
-					{/* <Button color="inherit" onClick={() => onHomeClick()}>
-            Home
-          </Button>
-          <Button color="inherit" onClick={() => onAboutClick()}>
-            About
-          </Button>
-          <Button color="inherit" onClick={() => onFeaturesClick()}>
-            Features
-          </Button>
-          <Button color="inherit" onClick={() => onPricingClick()}>
-            Pricing
-          </Button>
-          <Button color="inherit"><Link to="https://help.taxslips.ca/portal/en/home" target='_blank' style={{color:"#fff",textDecoration:"none"}} >Support</Link></Button>
-          <Button color="inherit" onClick={() => onContactClick()}>
-            Contact
-          </Button>
-          <Box sx={{margin:"0 4rem"}}>
+		  Login
+		</Link>
+		<Link
+		  to="https://backup-logistics.vercel.app/#/create-an-account"
+		  className="bl-nav-btn-signup-mobile"
+		  onClick={() => toggleDrawer(false)}
+		>
+		  Get Started
+		</Link>
+	  </Box>
+	</Drawer>
+  );
 
-          <Button color="inherit" variant="outlined" sx={{marginRight:"10px"}}><Link to="https://backup-logistics.vercel.app/#/taxslips_v5.com/" target='_blank' style={{color:"#fff",textDecoration:"none"}} >Login</Link></Button>
-          <Button color="inherit" variant="outlined"><Link to="https://backup-logistics.vercel.app/#/create-an-account" target='_blank' style={{color:"#fff",textDecoration:"none"}}>Sign Up</Link></Button>
-          </Box> */}
-				</Toolbar>
-			</Container>
-		</AppBar>
-	);
+  return (
+	<>
+	  <AppBar
+		position="fixed"
+		elevation={0}
+		className={`bl-navbar ${scrolled ? "bl-navbar-scrolled" : ""}`}
+	  >
+		<Toolbar className="bl-navbar-toolbar">
+		  {/* ── Logo ── */}
+		  <Box className="bl-navbar-logo-wrap" onClick={onHomeClick}>
+			<img
+			  src={taxslipsLogo}
+			  alt="Backup Logistics"
+			  className="bl-navbar-logo"
+			/>
+		  </Box>
+
+		  {/* ── Desktop Nav Links ── */}
+		  {!isMobile && (
+			<Box className="bl-navbar-links">
+			  {navLinks.map((link, index) => (
+				<button
+				  key={index}
+				  onClick={link.onClick}
+				  className="bl-navbar-link"
+				>
+				  {link.label}
+				</button>
+			  ))}
+			</Box>
+		  )}
+
+		  {/* ── Desktop CTA Buttons ── */}
+		  {!isMobile && (
+			<Box className="bl-navbar-actions">
+			  <Link
+				to="https://backup-logistics.vercel.app/#/taxslips_v5.com/"
+				className="bl-nav-btn-login"
+			  >
+				Login
+			  </Link>
+			  <Link
+				to="https://backup-logistics.vercel.app/#/create-an-account"
+				className="bl-nav-btn-signup"
+			  >
+				Get Started
+				<i className="pi pi-arrow-right bl-nav-btn-arrow" />
+			  </Link>
+			</Box>
+		  )}
+
+		  {/* ── Mobile Hamburger ── */}
+		  {isMobile && (
+			<IconButton
+			  onClick={() => toggleDrawer(true)}
+			  className="bl-navbar-hamburger"
+			>
+			  <MenuIcon />
+			</IconButton>
+		  )}
+		</Toolbar>
+	  </AppBar>
+
+	  {/* Mobile Drawer */}
+	  {renderMobileDrawer}
+
+	  {/* Spacer to prevent content from hiding behind fixed navbar */}
+	  <div className="bl-navbar-spacer" />
+	</>
+  );
 };
 
 export default Navigation;
