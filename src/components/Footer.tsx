@@ -538,7 +538,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 
 						<h3>Website Footer Links</h3>
 
-						<p>Add the following links to the footer of every page:</p>
+						{/* <p>Add the following links to the footer of every page:</p> */}
 
 						<ul>
 						<li>
@@ -570,7 +570,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 
 						<h3>Pages Required on the Website</h3>
 
-						<p>Your web developer must create the following pages:</p>
+						{/* <p>Your web developer must create the following pages:</p> */}
 
 						<ul>
 						<li>
