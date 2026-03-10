@@ -44,6 +44,16 @@
     padding: 25px 35px;
 }
 
+.contact-section a{
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.contact-section a:hover{
+    text-decoration: underline;
+}
+
+
 .policy-section{
     margin-bottom: 28px;
 }
@@ -75,11 +85,11 @@
     list-style-type: disc;
 }
 
-.contact-section a{
+.policy-section a{
     color: #1a73e8;
     text-decoration: none;
 }
 
-.contact-section a:hover{
+.policy-section a:hover{
     text-decoration: underline;
 }

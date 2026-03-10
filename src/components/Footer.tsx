@@ -314,310 +314,315 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							variant="body1"
 							onClick={() => setVisibleTermsAndConditions(true)}
 						>
-							Terms & Conditions
+							SMS Terms of Service
 						</Typography>
 						<Dialog
-							header="Terms & Conditions"
+							header="SMS Terms of Service"
 							footer={footerContent}
 							visible={visibleTermsAndConditions}
-							style={{ width: "50vw" }}
+							className="privacy-dialog"
+							style={{ width: "55vw" }}
 							onHide={() => setVisibleTermsAndConditions(false)}
 						>
-							<h4>
-								YOUR RIGHTS AND RESPONSIBILITIES ARE DETERMINED BY THE
-								FOLLOWING. IT IS VERY IMPORTANT THAT YOU READ, UNDERSTAND AND
-								AGREE TO THESE TERMS AND CONDITIONS.
-							</h4>
-							<p>
-								These Terms and Conditions are entered into between TaxSlips and
-								you and the entity you are authorized to represent ("you"), and
-								you accept them by acknowledging agreement with these Terms and
-								Conditions. You represent that you are able to legally enter
-								into this agreement and that if you are using this Site on
-								behalf of your employer, you represent and warrant that you are
-								authorized to accept these Terms and Conditions on your
-								employer's behalf, and that your employer agrees to indemnify
-								you and TaxSlips for violations of these Terms and Conditions.
-								YOU MUST CONSENT TO THESE TERMS AND CONDITIONS TO ACCESS AND/OR
-								USE THIS SITE AND/OR THE SERVICES PROVIDED.
-							</p>
-							<p>
-								You acknowledge having read, understood and agreed to the
-								following:
-							</p>
-							<li>General Disclaimers and Limitations of Liability</li>
-							<ul style={{ listStyle: "lower-alpha", padding: "inherit" }}>
-								<li>
-									{" "}
-									TaxSlips attempts to ensure that all information provided
-									and/or services rendered, whether on this website or
-									otherwise, is accurate, complete and timely. All information
-									provided and/or services rendered by TaxSlips is provided on
-									an “as is” and “as available” basis with no guarantee of
-									completeness, accuracy, timeliness and without warranty or
-									representation of any kind, either express or implied,
-									including, but not limited to, a warranty that the information
-									and/or services provided are fit for any particular purpose.
-									Any reliance upon the information provided by TaxSlips is
-									solely at the user’s own risk.
-								</li>
-								<li>
-									{" "}
-									TaxSlips shall not be liable for system failures or
-									interruptions affecting the TaxSlips website, or any errors or
-									omissions, or for the results obtained from using this
-									website. In no event shall TaxSlips, our related partnerships
-									or corporations, or the partners, directors, officers, agents
-									or employees of TaxSlips be liable for any decision made or
-									action taken in reliance upon the information contained on the
-									website or conveyed to you by TaxSlips, including but not
-									limited to any direct, indirect, special, incidental,
-									consequential or punitive damages whatsoever and however
-									caused, arising out of or in connection with the use of the
-									information or services provided or as a result of reliance
-									upon the information or services provided, including any lost
-									profits, or any other pecuniary loss, whether such action is
-									in contract, tort, statutorily or otherwise, even if advised
-									of the possibility of such damages.
-								</li>
-								<li>
-									{" "}
-									You agree that any legal action brought by you as against
-									TaxSlips shall be brought within one (1) year of the
-									occurrence of the damage, and no later.
-								</li>
-								<li>
-									{" "}
-									In the event that a court does find TaxSlips liable to you in
-									any way whatsoever, you agree that the extent of such
-									liability will be limited to an aggregate of two (2) percent
-									of the amount remitted by you to TaxSlips in the last calendar
-									year, or $50,000.00, both including legal fees, whichever is
-									less.
-								</li>
-								<li>
-									{" "}
-									You agree that these limitations and conditions are an
-									informed voluntary allocation of responsibility, which
-									constitutes a material aspect of this agreement.
-								</li>
-							</ul>
-							<h5>Intellectual Property</h5>
-							<li>
-								All of the content of the TaxSlips website, the design and
-								layout of the website and any material e-mailed to you or
-								otherwise supplied to you by TaxSlips is the copyright property
-								of TaxSlips. You may not reproduce or publicize this information
-								in any way whatsoever except in accordance with these Terms and
-								Conditions without the express prior written permission of
-								TaxSlips.
-							</li>
-							<ul style={{ listStyle: "lower-alpha", padding: "inherit" }}>
-								<li>
-									TaxSlips gives you a personal, revocable, worldwide,
-									royalty-free, non-assignable and non-exclusive licence to use
-									the software provided to you by TaxSlips through this website.
-									This licence is for the sole purpose of enabling you to use
-									and enjoy the benefit of the services as provided by TaxSlips,
-									in the manner permitted by these Terms and Conditions.
-								</li>
-								<li>
-									You may not (and you may not permit anyone else to) copy,
-									modify, create a derivative work of, reverse engineer,
-									decompile or otherwise attempt to extract the source code of
-									the software or any part thereof, unless this is expressly
-									permitted or required by law, or unless you have the express
-									prior written permission of TaxSlips. You may not assign (or
-									grant a sub-licence of) your rights to use the software, grant
-									a security interest in or over your rights to use the
-									software, or otherwise transfer any part of your rights to use
-									the software without the prior written permission of TaxSlips.
-								</li>
-								<li>
-									All of the trademarks and trade names reproduced on the
-									TaxSlips website are the property of TaxSlips or used under
-									licence. You may not use or reproduce or allow anyone to use,
-									publicize or reproduce any trade mark(s), logo(s) or trade
-									name(s) appearing on the TaxSlips website for any reason
-									whatsoever except in accordance with these Terms and
-									Conditions without the prior written permission of TaxSlips.
-								</li>
-								<li>
-									You agree not to infringe, or attempt to, aid or facilitate
-									the infringement the copyright, trademark or any other
-									intellectual property right of TaxSlips.
-								</li>
-								<li>
-									TaxSlips gives you a personal, revocable, worldwide,
-									royalty-free, non-assignable and non-exclusive licence to use
-									the TaxSlips trademark, trade name and logo for the sole
-									purpose of enabling you to identify the services as provided
-									by TaxSlips, in the manner permitted by these Terms and
-									Conditions. You are required to identify all work-product
-									derived from the use of this site and service by the use of
-									the TaxSlips logo as posted on the homepage of the TaxSlips
-									website. All benefit from the use of the trademark, trade name
-									and logo shall accrue solely to the benefit of TaxSlips.
-								</li>
-								<li>
-									TaxSlips gives you a personal, revocable, worldwide,
-									royalty-free, non-assignable and non-exclusive licence to use
-									the TaxSlips trademark, trade name and logo for the sole
-									purpose of enabling you to identify the services as provided
-									by TaxSlips, in the manner permitted by these Terms and
-									Conditions. You are required to identify all work-product
-									derived from the use of this site and service by the use of
-									the TaxSlips logo as posted on the homepage of the TaxSlips
-									website. All benefit from the use of the trademark, trade name
-									and logo shall accrue solely to the benefit of TaxSlips.
-								</li>
-							</ul>
-							<h5>Use of Content</h5>
-							<li>
-								You may view, retrieve and display the content of the TaxSlips
-								website on your computer screen or make a print-out of the
-								content on paper exclusively for your use in the normal course
-								of business. For the purpose of this agreement, activities in
-								the “normal course of business” shall mean those usual and
-								reasonable activities which automate your tax slips filing
-								processes including the completion and printing of tax slips
-								forms and XML files. Any other use is expressly prohibited
-								without the prior written consent of taxslips.ca.
-							</li>
-							<ul style={{ listStyle: "lower-alpha", padding: "inherit" }}>
-								<li>
-									You may not reproduce, disseminate, publicize, modify or in
-									any commercial or non-commercial way exploit any of the
-									content provided by TaxSlips or allow such content to be
-									available to others except in the normal course of business.
-									It is prohibited for you, without the prior written consent of
-									TaxSlips, to cause the information provided by TaxSlips to be
-									reproduced or publicized, in any form whatsoever, or to be
-									transmitted to any website, newsgroup, listserve, mailing
-									list, electronic bulletin board, electronic bulletin or to
-									make the information provided by TaxSlips available to any
-									other person or organization except in the normal course of
-									business. You also may not modify or create derivative works
-									of the information provided by Who2beton.
-								</li>
-							</ul>
-							<h5>Your Conduct</h5>
-							<li>
-								you will not use or access the Site or Services in a manner not
-								expressly permitted by TaxSlips, including using the Site to:
-							</li>
-							<p>
-								Engage or attempt to engage identity theft or identity fraud.
-							</p>
-							<p>
-								Forge headers or otherwise manipulate identifiers (including
-								URLs) in order to disguise the origin of any information or
-								data.
-							</p>
-							<p>Misrepresent your affiliation with a person or entity.</p>
-							<p>
-								Act in any manner that is intended, designed or does negatively
-								affect other users' ability to access or use the Site.
-							</p>
-							<p>Engage or attempt to engage in illegal activities.</p>
-							<p>
-								Collect or store personal data about other users unless
-								specifically authorized by such users.
-							</p>
-							<ul style={{ listStyle: "lower-alpha", padding: "inherit" }}>
-								<li>
-									{" "}
-									you will not use any automated inquiry device, bot, or
-									repetitive data gathering and extraction tool, routine, script
-									or other mechanism with similar functionality to access, use,
-									monitor or copy any pages or content of the Site or TaxSlips’s
-									servers or to interfere or attempt to interfere with the
-									proper working of the Site by TaxSlips or other users.
-								</li>
-								<li>
-									you will not frame or utilize framing techniques to enclose
-									any portion or aspect of the Site, without TaxSlips's express
-									written consent.
-								</li>
-							</ul>
 
-							<h5>Term, Termination and Access to Information</h5>
-							<p>
-								Your access to the TaxSlips website and service is for no
-								definite set term. You can terminate your access to TaxSlips at
-								any time. Your access is at the sole discretion of TaxSlips and
-								such discretion may be exercised unreasonably to terminate or
-								suspend your access to all or part of the TaxSlips website with
-								or without cause. These rights of termination are in addition to
-								all other rights or remedies provided in these Terms &
-								Conditions or by law. If any violation of these Terms and
-								Conditions or law is, or is likely to, on a balance of
-								probabilities, occur, TaxSlips shall have the right to terminate
-								your access and trace your account, and you agree that any and
-								all of your computer information and internet usage shall be
-								made available to TaxSlips, and you will make best efforts to
-								ensure that your service provider complies with these terms and
-								consent to the disclosure of all records in your possession,
-								care and/or control.
-							</p>
-							<h5>Site Alteration</h5>
-							<p>
-								TaxSlips reserves the right to modify, add or remove all or
-								portions of the information, functionality or layout of the
-								website at any time in its sole discretion and/or to restrict
-								the use and accessibility of the TaxSlips website. The site is
-								provided on an “as-is”, “when available” basis.
-							</p>
-							<h5>Registration and Passwords</h5>
-							<li>
-								{" "}
-								All persons accessing the password restricted areas of the
-								TaxSlips website must be registered with accurate, valid and
-								complete registration information and immediately inform
-								TaxSlips of any changes thereto. You acknowledge that your
-								password and username belong to you and that you will not share
-								such information with any other person or organization or make
-								such information otherwise available to anyone other than you.
-								You are responsible for ensuring that your username and password
-								are secure and remain confidential. You, and not TaxSlips, are
-								responsible for any access to and/or use of the site gained
-								through the use of your username and password. You are
-								responsible for ensuring that the information contained on the
-								website or otherwise conveyed to you remains confidential and
-								that the use of and access to the TaxSlips website and
-								information is made in accordance with these Terms and
-								Conditions. You have sole responsibility for the adequate
-								protection and backup of data and/or equipment used in
-								connection with the Site.
-							</li>
-							<ul style={{ listStyle: "lower-alpha", padding: "inherit" }}>
-								<li>
-									You agree to immediately notify TaxSlips if you become aware
-									of any loss, theft, unauthorized use of or disclosure of any
-									username, password or of any Proprietary Information or other
-									intellectual property belonging to TaxSlips.
-								</li>
-								<li>
-									You acknowledge that TaxSlips may be monitoring and tracking
-									the use of the TaxSlips website, including your personal usage
-									and habits.
-								</li>
-							</ul>
-							<h5>Injunctive Relief</h5>
-							<p>
-								You agree that TaxSlips has a material interest in preserving
-								its’ Proprietary Information and intellectual property rights
-								and in controlling the use of the information upon its’ website
-								and that the restrictions contained in clauses 2, 3, 4 and 7
-								above, among others, are reasonably required for the protection
-								of the rights and property of TaxSlips. You agree that the
-								violation or attempted violation of such terms will lead to an
-								irreparable loss to TaxSlips and that in such an event an
-								injunction or other like remedy shall be the only effective
-								method to protect the rights and property of TaxSlips and that
-								an interim injunction may be granted prior to or upon the
-								commencement of any suit.
-							</p>
+						<div className="policy-section">
+
+						<h3>Backup Logistics LLC</h3>
+
+						<p>
+						<b>Effective Date:</b> March 9, 2026 <br/>
+						<a href="https://backuplogistics.us" target="_blank">
+						backuplogistics.us
+						</a>
+						</p>
+
+						<p>
+						If you consent to receive conversational and informational SMS from
+						Backup Logistics LLC, you agree to receive dispatch updates,
+						load confirmations, operational alerts, and coordination messages.
+						</p>
+
+						<ul>
+						<li>Reply <b>STOP</b> to opt-out</li>
+						<li>Reply <b>HELP</b> for support</li>
+						<li>Message and data rates may apply</li>
+						<li>Messaging frequency may vary</li>
+						</ul>
+
+						<p>
+						Visit our policy:
+						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+						backuplogistics.us/privacy-policy
+						</a>
+						</p>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Program Description</h3>
+
+						<p>
+						Backup Logistics LLC sends the following types of SMS messages to
+						carriers, drivers, and business partners:
+						</p>
+
+						<ul>
+						<li>
+						<b>Conversational messages:</b> Two-way dispatch coordination and
+						load negotiations
+						</li>
+
+						<li>
+						<b>Informational messages:</b> Load confirmations, pickup/delivery
+						updates, rate confirmations, schedule changes, and operational alerts
+						</li>
+						</ul>
+
+						<p>
+						We do <b>not send promotional or marketing SMS messages.</b>
+						</p>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Consent and Opt-In</h3>
+
+						<p>You consent to receive SMS messages from Backup Logistics LLC by:</p>
+
+						<ul>
+						<li>Checking the SMS consent box on our website contact form</li>
+						<li>Providing your phone number during carrier or driver onboarding</li>
+						<li>Signing a rate confirmation or carrier agreement</li>
+						</ul>
+
+						<p>
+						Consent is not required as a condition of using our services.
+						</p>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Opt-Out</h3>
+
+						<p>
+						Reply <b>STOP</b> to any message to unsubscribe immediately.
+						You will receive one final confirmation message and no further
+						messages will be sent.
+						</p>
+
+						<p>
+						You may also opt out by emailing:
+						</p>
+
+						<a href="mailto:phone@backuplogistics.us">
+						phone@backuplogistics.us
+						</a>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Help</h3>
+
+						<p>
+						Reply <b>HELP</b> to any message or contact us at:
+						</p>
+
+						<a href="mailto:phone@backuplogistics.us">
+						phone@backuplogistics.us
+						</a>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Message Frequency & Rates</h3>
+
+						<p>
+						Message frequency varies depending on your active loads
+						and dispatch activity.
+						</p>
+
+						<p>
+						Message and data rates may apply. Please contact your
+						wireless carrier for details.
+						</p>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Privacy</h3>
+
+						<p>
+						No mobile opt-in or SMS consent data will be shared with
+						third parties or affiliates.
+						</p>
+
+						<p>
+						View our Privacy Policy:
+						</p>
+
+						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+						backuplogistics.us/privacy-policy
+						</a>
+
+						</div>
+
+						</Dialog>
+
+						<Typography
+							sx={{
+								paddingBottom: "16px",
+								cursor: "pointer",
+								"&.MuiTypography-root:hover": { color: "#ef8410" },
+							}}
+							variant="body1"
+							onClick={() => setVisibleTermsAndConditions(true)}
+						>
+							WEBSITE CONTACT FORM — SMS CONSENT LANGUAGE
+						</Typography>
+						<Dialog
+							header="Website Contact Form — SMS Consent Language"
+							footer={footerContent}
+							visible={visibleTermsAndConditions}
+							className="privacy-dialog"
+							style={{ width: "60vw" }}
+							onHide={() => setVisibleTermsAndConditions(false)}
+						>
+
+						<div className="policy-section">
+
+						<p>
+						<b>Backup Logistics LLC</b> | 
+						<a href="https://backuplogistics.us" target="_blank">
+						backuplogistics.us
+						</a>
+						</p>
+
+						<p className="dev-note">
+						For Web Developer — Copy the following instructions exactly into the website contact or onboarding form.
+						</p>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Checkbox Label (Next to Phone Number Field)</h3>
+
+						<p>
+						Place an <b>UNCHECKED checkbox</b> next to the phone number field with this label:
+						</p>
+
+						<div className="code-box">
+						[ ] I consent to receive conversational and informational SMS messages from Backup Logistics LLC,
+						including dispatch updates, load confirmations, and operational alerts.  
+						Reply STOP to opt-out; Reply HELP for support; Message and data rates may apply; Messaging frequency may vary.  
+						View our Privacy Policy at backuplogistics.us/privacy-policy and SMS Terms at backuplogistics.us/sms-terms.
+						</div>
+
+						<p className="important-note">
+						IMPORTANT: The checkbox must be OPTIONAL and UNCHECKED by default. Do not pre-check it.
+						</p>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Website Footer Links</h3>
+
+						<p>Add the following links to the footer of every page:</p>
+
+						<ul>
+						<li>
+						Privacy Policy — 
+						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+						backuplogistics.us/privacy-policy
+						</a>
+						</li>
+
+						<li>
+						SMS Terms of Service — 
+						<a href="https://backuplogistics.us/sms-terms" target="_blank">
+						backuplogistics.us/sms-terms
+						</a>
+						</li>
+
+						<li>
+						Terms and Conditions — 
+						<a href="https://backuplogistics.us/terms" target="_blank">
+						backuplogistics.us/terms
+						</a>
+						</li>
+						</ul>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>Pages Required on the Website</h3>
+
+						<p>Your web developer must create the following pages:</p>
+
+						<ul>
+						<li>
+						<b>backuplogistics.us/privacy-policy</b> — Upload the Privacy Policy document
+						</li>
+
+						<li>
+						<b>backuplogistics.us/sms-terms</b> — Upload the SMS Terms of Service document
+						</li>
+
+						<li>
+						<b>backuplogistics.us/terms</b> — Upload the General Terms and Conditions document
+						</li>
+						</ul>
+
+						</div>
+
+
+						<div className="policy-section">
+
+						<h3>RingCentral TCR Submission Checklist</h3>
+
+						<p>Before submitting TCR registration, confirm the following:</p>
+
+						<ul>
+						<li>Privacy Policy is live and publicly accessible</li>
+						<li>SMS Terms of Service page is live</li>
+						<li>Privacy Policy clearly explains what data is collected and how it is used</li>
+						<li>
+						Privacy Policy includes the statement:
+						<b>
+						"No mobile opt-in or text message consent will be shared with third parties or affiliates."
+						</b>
+						</li>
+						<li>
+						SMS Terms include STOP opt-out instructions, HELP support, message & data rate notice,
+						and a link to the privacy policy
+						</li>
+						<li>
+						Website contact form includes an optional, unchecked SMS consent checkbox
+						</li>
+						<li>
+						Privacy Policy and SMS Terms links are present in the footer of every page
+						</li>
+						</ul>
+
+						</div>
+
 						</Dialog>
 					</Box>
 				</Grid>
