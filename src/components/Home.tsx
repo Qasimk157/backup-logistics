@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <div className="bl-hero-content">
           <div className="bl-hero-badge">
             <span className="bl-hero-badge-dot" />
-            Freight Logistics &amp; Transportation
+            Freight Logistics &amp;  Transportation
           </div>
 
           <h1 className="bl-hero-title">
