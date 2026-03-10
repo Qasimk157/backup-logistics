@@ -796,10 +796,10 @@ Location: Houston, Texas, United States
 						<h3>13. Privacy Policy</h3>
 
 						<p>
-						Your use of this Site is also governed by our Privacy Policy available at:
-						<a href="https://backuplogistics.us/privacy-policy" target="_blank">
+						Your use of this Site is also governed by our Privacy Policy available at Privacy Policy.
+						{/* <a href="https://backuplogistics.us/privacy-policy" target="_blank">
 						backuplogistics.us/privacy-policy
-						</a>
+						</a> */}
 						</p>
 						</div>
 
