@@ -19,8 +19,8 @@ const Footer: React.FC<IFooterCallbacks> = ({
 	onContactClick,
 }) => {
 	const [visiblePrivacyPolicy, setVisiblePrivacyPolicy] = useState(false);
-	const [visibleTermsAndConditions, setVisibleTermsAndConditions] =
-		useState(false);
+	const [visibleTermsAndConditions, setVisibleTermsAndConditions] = useState(false);
+	const [smsvisibleTermsAndConditions, setSmsVisibleTermsAndConditions] = useState(false);
 
 	const siteMapLinkList = [
 		{ text: "About Us", link: onHomeClick },
@@ -38,6 +38,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 				onClick={() => {
 					setVisiblePrivacyPolicy(false);
 					setVisibleTermsAndConditions(false);
+					setSmsVisibleTermsAndConditions(false);
 				}}
 				// autoFocus
 				size="small"
@@ -335,7 +336,7 @@ Location: Houston, Texas, United States
 								"&.MuiTypography-root:hover": { color: "#ef8410" },
 							}}
 							variant="body1"
-							onClick={() => setVisibleTermsAndConditions(true)}
+							onClick={() => setSmsVisibleTermsAndConditions(true)}
 						>
 							SMS Terms of Service
 						</Typography>
@@ -345,7 +346,7 @@ Location: Houston, Texas, United States
 							visible={visibleTermsAndConditions}
 							className="privacy-dialog"
 							style={{ width: "55vw" }}
-							onHide={() => setVisibleTermsAndConditions(false)}
+							onHide={() => setSmsVisibleTermsAndConditions(false)}
 						>
 
 						<div className="policy-section">
@@ -517,7 +518,7 @@ Location: Houston, Texas, United States
 						<Dialog
 							header="Website Contact Form — SMS Consent Language"
 							footer={footerContent}
-							visible={visibleTermsAndConditions}
+							visible={smsvisibleTermsAndConditions}
 							className="privacy-dialog"
 							style={{ width: "60vw" }}
 							onHide={() => setVisibleTermsAndConditions(false)}
