@@ -315,8 +315,8 @@ Website:
 </a><br/>
 
 Email:
-<a href="mailto:phone@backuplogistics.us">
- phone@backuplogistics.us
+<a href="mailto:shahzaib@backuplogistics.us">
+ shahzaib@backuplogistics.us
 </a><br/>
 
 Location: Houston, Texas, United States
