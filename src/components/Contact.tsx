@@ -197,48 +197,7 @@ const Contact: React.FC = () => {
 						</form>
 						<Toast ref={toast} />
 					</Grid>
-					{/* <Grid item lg={4} xl={4} md={4} sm={10} xs={12}> */}
-					<Grid size={{lg:5, xl:3.9, md:4, sm:10, xs:12}} sx={{ ml: 8 }}>
-						<Card>
-							{/* <div className="card-detail"> */}
-							<div className="flex pl-3 align-items-center pb-6">
-								<i
-									className="pi pi-info-circle pl-2 pr-2"
-									style={{ color: "rgb(0, 87, 219)" }}
-								></i>
-								<div className="pl-4 pr-4">
-									<strong>
-										1617 fannin street Houston Tx 77002
-									</strong>
-								</div>
-							</div>
-							<div className="flex pl-3 align-items-center pb-6">
-								<i
-									className="pi pi-mobile pl-2 pr-2"
-									style={{ color: "rgb(0, 87, 219)" }}
-								></i>
-								<div className="pl-4 pr-4">
-									<strong>609-900-4243</strong>
-								</div>
-							</div>
-							<div className="flex pl-3 align-items-center">
-								<i
-									className="pi pi-envelope pl-2 pr-2"
-									style={{ color: "rgb(0, 87, 219)" }}
-								></i>
-								<div className="pl-4 pr-4">
-									<a
-										href="mailto:Shahzaib@backuplogistics.us"
-										style={{ fontWeight: "bold", textDecoration: "auto" }}
-									>
-										Shahzaib@backuplogistics.us
-									</a>
-								</div>
-							</div>
-							{/* </div> */}
-						</Card>
-					</Grid>
-					{/* <Grid item lg={1} xl={1} md={1} sm={1} xs={1}></Grid> */}
+					
 				</Grid>
 			</div>
 		</>

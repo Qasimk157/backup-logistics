@@ -421,8 +421,8 @@ Location: Houston, Texas, United States
 
 							<p>
 							You may also opt out by emailing
-							<a href="mailto:phone@backuplogistics.us">
-							phone@backuplogistics.us
+							<a href="mailto:shahzaib@backuplogistics.us">
+							shahzaib@backuplogistics.us
 							</a>
 							with your number and request.
 							</p>
@@ -432,8 +432,8 @@ Location: Houston, Texas, United States
 
 							<p>
 							Reply HELP to any message or contact us at
-							<a href="mailto:phone@backuplogistics.us">
-							phone@backuplogistics.us
+							<a href="mailto:shahzaib@backuplogistics.us">
+							shahzaib@backuplogistics.us
 							</a>
 							for support.
 							</p>
