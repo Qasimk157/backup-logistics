@@ -208,7 +208,7 @@ const Contact: React.FC = () => {
 								></i>
 								<div className="pl-4 pr-4">
 									<strong>
-										Ewing, New Jersey, United States
+										1617 fannin street Houston Tx 77002
 									</strong>
 								</div>
 							</div>

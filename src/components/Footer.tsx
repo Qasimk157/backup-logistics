@@ -76,7 +76,7 @@ const Footer: React.FC<IFooterCallbacks> = ({
 							Connect
 						</Typography>
 						<Typography sx={{ paddingBottom: "16px" }} variant="body1">
-							Ewing, New Jersey, United States
+							1617 fannin street Houston Tx 77002
 						</Typography>
 						<Typography sx={{ margin: "24px 0 16px 0" }}>
 							609-900-4243
