@@ -115,7 +115,6 @@ const Footer: React.FC<IFooterCallbacks> = ({
 			<ul className="bl-footer-links">
 			  <li><a onClick={onHomeClick}>About Us</a></li>
 			  <li><a onClick={onAboutClick}>Services</a></li>
-			  <li><a onClick={onFeaturesClick}>Members Portal</a></li>
 			  <li><a onClick={onPricingClick}>Legal</a></li>
 			  <li><a onClick={onContactClick}>Profile</a></li>
 			</ul>

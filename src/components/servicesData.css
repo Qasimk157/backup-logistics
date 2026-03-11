@@ -1,0 +1,330 @@
+/* ═══════════════════════════════════════════════════════════
+   BACKUP LOGISTICS — Services Section
+   ═══════════════════════════════════════════════════════════ */
+
+.bl-services-section {
+  position: relative;
+  padding: 100px 24px 80px;
+  background: var(--bl-dark-bg, #0c1f18);
+  overflow: hidden;
+}
+
+.bl-services-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 10%, rgba(31, 115, 83, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(94, 240, 184, 0.04) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+/* ─── HEADER ─── */
+.bl-services-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 40px;
+  animation: blServIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes blServIn {
+  from { opacity: 0; transform: translateY(35px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bl-services-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bl-accent, #5ef0b8);
+  margin-bottom: 20px;
+}
+
+.bl-services-badge-line {
+  display: inline-block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--bl-accent, #5ef0b8);
+  opacity: 0.5;
+}
+
+.bl-services-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.08;
+  margin: 0 0 16px;
+  letter-spacing: -1.5px;
+}
+
+.bl-services-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--bl-accent, #5ef0b8), var(--bl-gold, #f5d76e));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bl-services-subtitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── CATEGORY TABS ─── */
+.bl-services-tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.bl-services-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bl-services-tab i {
+  font-size: 1rem;
+}
+
+.bl-services-tab:hover {
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.bl-services-tab-active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(31, 115, 83, 0.3), rgba(94, 240, 184, 0.1)) !important;
+  border-color: rgba(94, 240, 184, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(94, 240, 184, 0.08);
+}
+
+.bl-services-tab-active i {
+  color: var(--bl-accent, #5ef0b8);
+}
+
+.bl-services-cat-tagline {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 0 40px;
+}
+
+/* ─── SERVICE CARDS GRID ─── */
+.bl-services-grid {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ─── INDIVIDUAL CARD ─── */
+.bl-service-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: blCardFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+}
+
+@keyframes blCardFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bl-service-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(94, 240, 184, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+/* Visual area (image or icon placeholder) */
+.bl-service-card-visual {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.bl-service-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bl-service-card:hover .bl-service-card-img {
+  transform: scale(1.05);
+}
+
+/* Icon placeholder when no image */
+.bl-service-card-icon-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(31, 115, 83, 0.12),
+    rgba(94, 240, 184, 0.04)
+  );
+}
+
+.bl-service-card-icon-placeholder i {
+  font-size: 2.8rem;
+  color: var(--bl-accent, #5ef0b8);
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.bl-service-card:hover .bl-service-card-icon-placeholder i {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+/* Badge on card */
+.bl-service-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  background: rgba(12, 31, 24, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(94, 240, 184, 0.1);
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--bl-accent, #5ef0b8);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Content */
+.bl-service-card-content {
+  padding: 20px;
+}
+
+.bl-service-card-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px;
+}
+
+.bl-service-card-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Bottom accent line */
+.bl-service-card-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--bl-accent, #5ef0b8), var(--bl-gold, #f5d76e));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bl-service-card:hover .bl-service-card-accent {
+  opacity: 1;
+}
+
+/* ─── BOTTOM CTA ─── */
+.bl-services-cta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.bl-services-cta-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.bl-services-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bl-accent, #5ef0b8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bl-services-cta-btn:hover {
+  background: rgba(94, 240, 184, 0.06);
+  border-color: rgba(94, 240, 184, 0.15);
+  color: var(--bl-accent, #5ef0b8);
+  text-decoration: none;
+}
+
+.bl-services-cta-btn i {
+  font-size: 13px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .bl-services-section { padding: 72px 20px 60px; }
+  .bl-services-title { font-size: 36px; }
+  .bl-services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
+@media (max-width: 600px) {
+  .bl-services-section { padding: 56px 16px 48px; }
+  .bl-services-title { font-size: 28px; }
+  .bl-services-grid { grid-template-columns: 1fr; }
+  .bl-services-tabs { flex-direction: column; align-items: center; }
+  .bl-services-tab { width: 100%; max-width: 280px; justify-content: center; }
+  .bl-services-cta { flex-direction: column; }
+  .bl-service-card-visual { height: 160px; }
+}

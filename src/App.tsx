@@ -4,6 +4,7 @@ import Navigation, { NavigationHandle } from "./components/Navigation";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
+import Services from "./components/Services";
 
 import Contact from "./components/Contact";
 import aboutusBackground from "../src/images/about-background.png";
@@ -33,6 +34,7 @@ function App() {
 
 	const aboutRef = useRef(null);
 	const homeRef = useRef(null);
+	const servicesRef = useRef(null);
 	const featuresRef = useRef(null);
 	const pricingRef = useRef(null);
 	const supportRef = useRef(null);
@@ -53,13 +55,6 @@ function App() {
 	const aboutStyle = {
 		backgroundImage: `url(${aboutusBackground})`,
 	};
-	const featureStyle = {
-		backgroundColor: "#f6f9fc",
-	};
-	const pricingStyle = {
-		backgroundImage:
-			"linear-gradient(to bottom right, rgb(0 87 219 / 74%), #28b7b3)",
-	};
 	const contactStyle = {
 		backgroundColor: "#dbdddea8",
 	};
@@ -70,19 +65,18 @@ function App() {
 	return (
 		<Router>
 			<div>
-				{/* ── Navigation with ref so Home can trigger signup dialog ── */}
+				{/* ── Navigation with ref ── */}
 				<Navigation
 					ref={navRef}
 					onHomeClick={() => scrollToSection(homeRef)}
 					onAboutClick={() => scrollToSection(aboutRef)}
-					onFeaturesClick={() => scrollToSection(featuresRef)}
+					onFeaturesClick={() => scrollToSection(servicesRef)}
 					onPricingClick={() => scrollToSection(pricingRef)}
 					onSupportClick={() => scrollToSection(supportRef)}
 					onContactClick={() => scrollToSection(contactRef)}
 				/>
 				<div>
 					<div ref={homeRef} style={{padding}}>
-						{/* ── Home with callbacks for Get Started + Contact Us ── */}
 						<Home
 							onGetStartedClick={() => navRef.current?.openSignup()}
 							onContactClick={() => scrollToSection(contactRef)}
@@ -91,12 +85,10 @@ function App() {
 					<div ref={aboutRef} style={{...aboutStyle,padding}}>
 						<About />
 					</div>
-					{/* <div ref={featuresRef} style={{...featureStyle,padding}}>
-						<Features />
-					</div> */}
-					{/* <div ref={pricingRef} style={{...pricingStyle,padding}}>
-						<Pricing />
-					</div> */}
+					{/* ── Services Section ── */}
+					<div ref={servicesRef}>
+						<Services />
+					</div>
 					<div ref={exploreRef} style={{...contactStyle,padding}}>
 						<VerticalDemo />
 					</div>
@@ -107,7 +99,7 @@ function App() {
 					<Footer 
 						onHomeClick={() => scrollToSection(homeRef)}
 						onAboutClick={() => scrollToSection(aboutRef)}
-						onFeaturesClick={() => scrollToSection(featuresRef)}
+						onFeaturesClick={() => scrollToSection(servicesRef)}
 						onPricingClick={() => scrollToSection(pricingRef)}
 						onContactClick={() => scrollToSection(contactRef)}
 						/>
