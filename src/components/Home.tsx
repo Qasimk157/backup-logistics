@@ -1,10 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "primereact/button";
 import homePage from "../images/taxslips-home-img.png";
 import "./homeData.css";
 
-const Home: React.FC = () => {
+interface IHomeCallbacks {
+  onGetStartedClick: () => void;
+  onContactClick: () => void;
+}
+
+const Home: React.FC<IHomeCallbacks> = ({
+  onGetStartedClick,
+  onContactClick,
+}) => {
   return (
     <section className="bl-hero-section">
       {/* Background effects */}
@@ -16,7 +22,7 @@ const Home: React.FC = () => {
         <div className="bl-hero-content">
           <div className="bl-hero-badge">
             <span className="bl-hero-badge-dot" />
-            Freight Logistics &amp;  Transportation
+            Freight Logistics &amp; Transportation
           </div>
 
           <h1 className="bl-hero-title">
@@ -31,18 +37,23 @@ const Home: React.FC = () => {
           </p>
 
           <div className="bl-hero-actions">
-            <Link
-              to="https://backup-logistics.vercel.app/#/create-an-account"
+            {/* Get Started → opens signup dialog */}
+            <button
               className="bl-hero-btn-primary"
+              onClick={onGetStartedClick}
             >
               <span>Get Started</span>
               <i className="pi pi-arrow-right" />
-            </Link>
+            </button>
 
-            <a href="#contact" className="bl-hero-btn-secondary">
+            {/* Contact Us → scrolls to contact section */}
+            <button
+              className="bl-hero-btn-secondary"
+              onClick={onContactClick}
+            >
               <i className="pi pi-phone" />
               <span>Contact Us</span>
-            </a>
+            </button>
           </div>
 
           {/* Trust indicators */}
@@ -67,14 +78,12 @@ const Home: React.FC = () => {
         {/* ── RIGHT: Image ── */}
         <div className="bl-hero-image-col">
           <div className="bl-hero-image-wrap">
-            {/* Decorative glow behind image */}
             <div className="bl-hero-image-glow" />
             <img
               src={homePage}
               alt="Backup Logistics Dashboard"
               className="bl-hero-image"
             />
-            {/* Floating stat card */}
             <div className="bl-hero-float-card">
               <div className="bl-hero-float-icon">
                 <i className="pi pi-truck" />
@@ -88,7 +97,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom fade to next section */}
       <div className="bl-hero-bottom-fade" />
     </section>
   );

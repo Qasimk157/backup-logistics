@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import "./App.css";
-import Navigation from "./components/Navigation";
+import Navigation, { NavigationHandle } from "./components/Navigation";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -28,12 +28,15 @@ function App() {
 	const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 	const padding = isExtraSmallScreen ? '1rem' : isSmallScreen ? '8rem' : isMediumScreen ? "3rem" : isLargeScreen ? "4rem" : '1.5rem 200px';
 
-	
+	// ── Navigation ref (to open login/signup dialogs from anywhere) ──
+	const navRef = useRef<NavigationHandle>(null);
+
 	const aboutRef = useRef(null);
 	const homeRef = useRef(null);
 	const featuresRef = useRef(null);
 	const pricingRef = useRef(null);
 	const supportRef = useRef(null);
+	const exploreRef = useRef(null);
 	const contactRef = useRef(null);
 
 	const scrollToSection = (ref: any) => {
@@ -49,20 +52,16 @@ function App() {
 	};
 	const aboutStyle = {
 		backgroundImage: `url(${aboutusBackground})`,
-		// paddingTop: "35px",
 	};
 	const featureStyle = {
 		backgroundColor: "#f6f9fc",
-		// paddingTop: "35px",
 	};
 	const pricingStyle = {
 		backgroundImage:
 			"linear-gradient(to bottom right, rgb(0 87 219 / 74%), #28b7b3)",
-		// paddingTop: "35px",
 	};
 	const contactStyle = {
 		backgroundColor: "#dbdddea8",
-		// paddingTop: "35px",
 	};
 	const footerStyle = {
 		backgroundColor: "#064422",
@@ -71,7 +70,9 @@ function App() {
 	return (
 		<Router>
 			<div>
+				{/* ── Navigation with ref so Home can trigger signup dialog ── */}
 				<Navigation
+					ref={navRef}
 					onHomeClick={() => scrollToSection(homeRef)}
 					onAboutClick={() => scrollToSection(aboutRef)}
 					onFeaturesClick={() => scrollToSection(featuresRef)}
@@ -81,7 +82,11 @@ function App() {
 				/>
 				<div>
 					<div ref={homeRef} style={{padding}}>
-						<Home />
+						{/* ── Home with callbacks for Get Started + Contact Us ── */}
+						<Home
+							onGetStartedClick={() => navRef.current?.openSignup()}
+							onContactClick={() => scrollToSection(contactRef)}
+						/>
 					</div>
 					<div ref={aboutRef} style={{...aboutStyle,padding}}>
 						<About />
@@ -92,7 +97,7 @@ function App() {
 					{/* <div ref={pricingRef} style={{...pricingStyle,padding}}>
 						<Pricing />
 					</div> */}
-					<div ref={contactRef} style={{...contactStyle,padding}}>
+					<div ref={exploreRef} style={{...contactStyle,padding}}>
 						<VerticalDemo />
 					</div>
 					<div ref={contactRef} style={{...contactStyle,padding}}>
