@@ -30,7 +30,7 @@ const serviceData: ServiceCategory[] = [
         description:
           "Time-critical flatbed freight delivery for oversized, heavy, or urgent loads across the country. Fast dispatch, dedicated drivers.",
         icon: "pi pi-bolt",
-        // image: require("../images/services/hotshot.jpg"),  // ← Uncomment when image is ready
+        // image: require("../images/services/hotshot.webp"),  // ← Uncomment when image is ready
       },
       {
         title: "Straight Van",

@@ -13,12 +13,10 @@ const Home: React.FC<IHomeCallbacks> = ({
 }) => {
   return (
     <section className="bl-hero-section">
-      {/* Background effects */}
       <div className="bl-hero-bg" />
       <div className="bl-hero-grid-lines" />
 
       <div className="bl-hero-container">
-        {/* ── LEFT: Text Content ── */}
         <div className="bl-hero-content">
           <div className="bl-hero-badge">
             <span className="bl-hero-badge-dot" />
@@ -37,26 +35,17 @@ const Home: React.FC<IHomeCallbacks> = ({
           </p>
 
           <div className="bl-hero-actions">
-            {/* Get Started → opens signup dialog */}
-            <button
-              className="bl-hero-btn-primary"
-              onClick={onGetStartedClick}
-            >
+            <button className="bl-hero-btn-primary" onClick={onGetStartedClick}>
               <span>Get Started</span>
               <i className="pi pi-arrow-right" />
             </button>
 
-            {/* Contact Us → scrolls to contact section */}
-            <button
-              className="bl-hero-btn-secondary"
-              onClick={onContactClick}
-            >
+            <button className="bl-hero-btn-secondary" onClick={onContactClick}>
               <i className="pi pi-phone" />
               <span>Contact Us</span>
             </button>
           </div>
 
-          {/* Trust indicators */}
           <div className="bl-hero-trust">
             <div className="bl-hero-trust-item">
               <i className="pi pi-verified bl-hero-trust-icon" />
@@ -75,15 +64,10 @@ const Home: React.FC<IHomeCallbacks> = ({
           </div>
         </div>
 
-        {/* ── RIGHT: Image ── */}
         <div className="bl-hero-image-col">
           <div className="bl-hero-image-wrap">
             <div className="bl-hero-image-glow" />
-            <img
-              src={homePage}
-              alt="Backup Logistics Dashboard"
-              className="bl-hero-image"
-            />
+            <img src={homePage} alt="Backup Logistics Dashboard" className="bl-hero-image" />
             <div className="bl-hero-float-card">
               <div className="bl-hero-float-icon">
                 <i className="pi pi-truck" />

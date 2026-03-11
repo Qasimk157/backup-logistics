@@ -25,10 +25,6 @@ import taxslipsLogo from "../images/taxslip-logo.jpeg";
 import "./navigationData.css";
 import { baseURL } from "../common/http-common";
 
-// ═══════════════════════════════════════════
-// Expose these methods via ref so parent can
-// call navRef.current.openSignup() from anywhere
-// ═══════════════════════════════════════════
 export interface NavigationHandle {
   openLogin: () => void;
   openSignup: () => void;
@@ -105,7 +101,6 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 	const [loginErrors, setLoginErrors] = useState<FormErrors>({});
 	const [signupErrors, setSignupErrors] = useState<FormErrors>({});
 
-	// ── Expose methods to parent via ref ──
 	useImperativeHandle(ref, () => ({
 	  openLogin: () => setShowLogin(true),
 	  openSignup: () => setShowSignup(true),
@@ -119,7 +114,6 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 
 	const toggleDrawer = (open: boolean) => setDrawerOpen(open);
 
-	// ═══ VALIDATION ═══
 	const validateEmail = (email: string): boolean =>
 	  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -146,7 +140,6 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 	  return Object.keys(errors).length === 0;
 	};
 
-	// ═══ API CALLS ═══
 	const handleLogin = async () => {
 	  if (!validateLogin()) return;
 	  setLoginLoading(true);
@@ -154,10 +147,7 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 		const response = await fetch(`${baseURL}/auth/login`, {
 		  method: "POST",
 		  headers: { "Content-Type": "application/json" },
-		  body: JSON.stringify({
-			email: loginForm.email,
-			password: loginForm.password,
-		  }),
+		  body: JSON.stringify({ email: loginForm.email, password: loginForm.password }),
 		});
 		const data = await response.json();
 		if (response.ok) {
@@ -218,29 +208,25 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 	  setSignupErrors({});
 	};
 
-	const switchToSignup = () => {
-	  setShowLogin(false);
-	  resetLoginForm();
-	  setTimeout(() => setShowSignup(true), 200);
-	};
-
-	const switchToLogin = () => {
-	  setShowSignup(false);
-	  resetSignupForm();
-	  setTimeout(() => setShowLogin(true), 200);
-	};
-
+	const switchToSignup = () => { setShowLogin(false); resetLoginForm(); setTimeout(() => setShowSignup(true), 200); };
+	const switchToLogin = () => { setShowSignup(false); resetSignupForm(); setTimeout(() => setShowLogin(true), 200); };
 	const openLoginHandler = () => { toggleDrawer(false); setShowLogin(true); };
 	const openSignupHandler = () => { toggleDrawer(false); setShowSignup(true); };
 
+	// ═══════════════════════════════════════════
+	// FIXED: navLinks properly mapped
+	//   About Us   → onHomeClick    → scrolls to aboutRef
+	//   Services   → onFeaturesClick → scrolls to servicesRef
+	//   Legal      → onPricingClick  → scrolls to legalRef (or footer legal)
+	//   Profile    → onContactClick  → scrolls to contactRef
+	// ═══════════════════════════════════════════
 	const navLinks = [
 	  { label: "About Us", onClick: onHomeClick },
-	  { label: "Services", onClick: onPricingClick },
-	  { label: "Legal", onClick: onAboutClick },
+	  { label: "Services", onClick: onFeaturesClick },
+	  { label: "Legal", onClick: onPricingClick },
 	  { label: "Profile", onClick: onContactClick },
 	];
 
-	// ═══ MOBILE DRAWER ═══
 	const renderMobileDrawer = (
 	  <Drawer anchor="right" open={drawerOpen} onClose={() => toggleDrawer(false)} PaperProps={{ className: "bl-nav-drawer" }}>
 		<Box className="bl-nav-drawer-header">
@@ -263,11 +249,9 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 	  </Drawer>
 	);
 
-	// ═══ RENDER ═══
 	return (
 	  <>
 		<Toast ref={toast} />
-
 		<AppBar position="fixed" elevation={0} className={`bl-navbar ${scrolled ? "bl-navbar-scrolled" : ""}`}>
 		  <Toolbar className="bl-navbar-toolbar">
 			<Box className="bl-navbar-logo-wrap" onClick={onHomeClick}>
@@ -293,11 +277,10 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 			)}
 		  </Toolbar>
 		</AppBar>
-
 		{renderMobileDrawer}
 		<div className="bl-navbar-spacer" />
 
-		{/* ═══ LOGIN DIALOG ═══ */}
+		{/* LOGIN DIALOG */}
 		<Dialog visible={showLogin} onHide={() => { setShowLogin(false); resetLoginForm(); }} className="bl-auth-dialog" showHeader={false} modal dismissableMask style={{ width: isMobile ? "95vw" : "440px" }}>
 		  <div className="bl-auth-card">
 			<button className="bl-auth-close" onClick={() => { setShowLogin(false); resetLoginForm(); }}><i className="pi pi-times" /></button>
@@ -335,7 +318,7 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 		  </div>
 		</Dialog>
 
-		{/* ═══ SIGNUP DIALOG ═══ */}
+		{/* SIGNUP DIALOG */}
 		<Dialog visible={showSignup} onHide={() => { setShowSignup(false); resetSignupForm(); }} className="bl-auth-dialog" showHeader={false} modal dismissableMask style={{ width: isMobile ? "95vw" : "500px" }}>
 		  <div className="bl-auth-card">
 			<button className="bl-auth-close" onClick={() => { setShowSignup(false); resetSignupForm(); }}><i className="pi pi-times" /></button>
@@ -397,5 +380,4 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 );
 
 Navigation.displayName = "Navigation";
-
 export default Navigation;

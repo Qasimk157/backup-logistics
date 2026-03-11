@@ -5,17 +5,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
-
 import Contact from "./components/Contact";
 import aboutusBackground from "../src/images/about-background.png";
 
-// Prime REact Configeration add import files here
-//theme
+// Prime React Configuration
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-//core
 import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css"; //icons
-import "primeflex/primeflex.css"; //flex
+import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 import Footer from "./components/Footer";
 import { useMediaQuery, useTheme } from "@mui/material";
 import VerticalDemo from "./components/ExploreJourney";
@@ -29,13 +26,11 @@ function App() {
 	const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 	const padding = isExtraSmallScreen ? '1rem' : isSmallScreen ? '8rem' : isMediumScreen ? "3rem" : isLargeScreen ? "4rem" : '1.5rem 200px';
 
-	// ── Navigation ref (to open login/signup dialogs from anywhere) ──
 	const navRef = useRef<NavigationHandle>(null);
 
-	const aboutRef = useRef(null);
 	const homeRef = useRef(null);
+	const aboutRef = useRef(null);
 	const servicesRef = useRef(null);
-	const featuresRef = useRef(null);
 	const pricingRef = useRef(null);
 	const supportRef = useRef(null);
 	const exploreRef = useRef(null);
@@ -45,13 +40,13 @@ function App() {
 		if (ref.current) {
 			const elementTop = ref.current.getBoundingClientRect().top + window.scrollY;
 			const offset = 64;
-		
 			window.scroll({
-			  top: elementTop - offset,
-			  behavior: 'smooth',
+				top: elementTop - offset,
+				behavior: 'smooth',
 			});
-		  }
+		}
 	};
+
 	const aboutStyle = {
 		backgroundImage: `url(${aboutusBackground})`,
 	};
@@ -62,10 +57,10 @@ function App() {
 		backgroundColor: "#064422",
 		color: "#fff",
 	};
+
 	return (
 		<Router>
 			<div>
-				{/* ── Navigation with ref ── */}
 				<Navigation
 					ref={navRef}
 					onHomeClick={() => scrollToSection(homeRef)}
@@ -76,32 +71,31 @@ function App() {
 					onContactClick={() => scrollToSection(contactRef)}
 				/>
 				<div>
-					<div ref={homeRef} style={{padding}}>
+					<div ref={homeRef} style={{ padding }}>
 						<Home
 							onGetStartedClick={() => navRef.current?.openSignup()}
 							onContactClick={() => scrollToSection(contactRef)}
 						/>
 					</div>
-					<div ref={aboutRef} style={{...aboutStyle,padding}}>
+					<div ref={aboutRef} style={{ ...aboutStyle, padding }}>
 						<About />
 					</div>
-					{/* ── Services Section ── */}
 					<div ref={servicesRef}>
 						<Services />
 					</div>
-					<div ref={exploreRef} style={{...contactStyle,padding}}>
+					<div ref={exploreRef} style={{ ...contactStyle, padding }}>
 						<VerticalDemo />
 					</div>
-					<div ref={contactRef} style={{...contactStyle,padding}}>
+					<div ref={contactRef} style={{ ...contactStyle, padding }}>
 						<Contact />
 					</div>
 					<div style={footerStyle}>
-					<Footer 
-						onHomeClick={() => scrollToSection(homeRef)}
-						onAboutClick={() => scrollToSection(aboutRef)}
-						onFeaturesClick={() => scrollToSection(servicesRef)}
-						onPricingClick={() => scrollToSection(pricingRef)}
-						onContactClick={() => scrollToSection(contactRef)}
+						<Footer
+							onHomeClick={() => scrollToSection(homeRef)}
+							onAboutClick={() => scrollToSection(aboutRef)}
+							onFeaturesClick={() => scrollToSection(servicesRef)}
+							onPricingClick={() => scrollToSection(pricingRef)}
+							onContactClick={() => scrollToSection(contactRef)}
 						/>
 					</div>
 				</div>
