@@ -6,7 +6,6 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import aboutusBackground from "../src/images/about-background.png";
 
 // Prime React Configuration
 import "primereact/resources/themes/lara-light-indigo/theme.css";
@@ -48,7 +47,7 @@ function App() {
 	};
 
 	const aboutStyle = {
-		backgroundImage: `url(${aboutusBackground})`,
+		backgroundColor: "#ffffff",
 	};
 	const contactStyle = {
 		backgroundColor: "#dbdddea8",
