@@ -21,7 +21,7 @@ import { Button } from "primereact/button";
 import { Checkbox } from "primereact/checkbox";
 import { Toast } from "primereact/toast";
 import { Message } from "primereact/message";
-import taxslipsLogo from "../images/taxslip-logo.jpeg";
+import taxslipsLogo from "../images/taxslip-logo.png";
 import "./navigationData.css";
 import { baseURL } from "../common/http-common";
 
