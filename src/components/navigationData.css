@@ -1,179 +1,219 @@
 /* ═══════════════════════════════════════════════════════════
    BACKUP LOGISTICS — Navigation + Auth Dialogs
+   Premium Dark Theme — 2026 Redesign
    ═══════════════════════════════════════════════════════════ */
 
 /* ─── NAVBAR ─── */
 .bl-navbar.MuiAppBar-root {
-  background: var(--bl-green-900, #0d2e22) !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  background: linear-gradient(180deg, #091f17 0%, #0d2e22 100%) !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(94, 240, 184, 0.06);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1100;
 }
 
 .bl-navbar.bl-navbar-scrolled.MuiAppBar-root {
-  background: rgba(13, 46, 34, 0.92) !important;
-  backdrop-filter: blur(20px) saturate(1.3);
-  -webkit-backdrop-filter: blur(20px) saturate(1.3);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05),
-              0 8px 32px rgba(0, 0, 0, 0.2) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(9, 31, 23, 0.88) !important;
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25),
+              0 1px 0 rgba(94, 240, 184, 0.05) !important;
+  border-bottom: 1px solid rgba(94, 240, 184, 0.08);
 }
 
+/* ─── TOOLBAR LAYOUT ───
+   Logo (left) → 48px gap → Nav Links → flex-grow space → Buttons (far right)
+   ─────────────────────── */
 .bl-navbar-toolbar.MuiToolbar-root {
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 8px 24px;
-  min-height: auto;
+  padding: 0 32px;
+  min-height: 72px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0;
 }
 
-.bl-navbar-spacer { height: 80px; }
+.bl-navbar-spacer { height: 72px; }
 
+/* ─── LOGO — left aligned, vertically centered ─── */
 .bl-navbar-logo-wrap {
   display: flex;
   align-items: center;
   cursor: pointer;
   flex-shrink: 0;
-}
-
-.bl-navbar-logo {
-  height: 56px;
-  width: auto;
+  padding: 4px 0;
+  margin-right: 48px;
   transition: opacity 0.3s ease;
 }
 
-.bl-navbar-logo-wrap:hover .bl-navbar-logo { opacity: 0.85; }
+.bl-navbar-logo-wrap:hover { opacity: 0.9; }
 
-/* Nav Links */
+.bl-navbar-logo {
+  height: 46px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(94, 240, 184, 0.08));
+  transition: filter 0.3s ease;
+}
+
+.bl-navbar-logo-wrap:hover .bl-navbar-logo {
+  filter: drop-shadow(0 2px 12px rgba(94, 240, 184, 0.15));
+}
+
+/* ─── NAV LINKS — right after logo gap, takes no extra space ─── */
 .bl-navbar-links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
+  margin-right: auto; /* pushes buttons to far right */
 }
 
 .bl-navbar-link {
   background: none;
   border: none;
-  padding: 10px 18px;
+  padding: 8px 20px;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   border-radius: 8px;
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   white-space: nowrap;
+  letter-spacing: 0.2px;
 }
 
 .bl-navbar-link:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(94, 240, 184, 0.06);
 }
 
 .bl-navbar-link::after {
   content: "";
   position: absolute;
-  bottom: 4px;
+  bottom: 2px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 0;
+  transform: translateX(-50%) scaleX(0);
+  width: 20px;
   height: 2px;
-  background: var(--bl-accent, #5ef0b8);
+  background: linear-gradient(90deg, var(--bl-accent, #5ef0b8), rgba(94, 240, 184, 0.3));
   border-radius: 2px;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
 }
 
-.bl-navbar-link:hover::after { width: 20px; }
+.bl-navbar-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
 
-/* CTA Buttons */
+.bl-navbar-link.active {
+  color: #ffffff;
+}
+
+.bl-navbar-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+  background: var(--bl-accent, #5ef0b8);
+}
+
+/* ─── CTA BUTTONS — far right ─── */
 .bl-navbar-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-left: 32px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .bl-nav-btn-login {
   display: inline-flex;
   align-items: center;
-  padding: 9px 22px;
+  padding: 9px 24px;
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
 .bl-nav-btn-login:hover {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(94, 240, 184, 0.25);
+  background: rgba(94, 240, 184, 0.06);
+  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.04);
 }
 
 .bl-nav-btn-signup {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 22px;
+  padding: 9px 24px;
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
-  color: #ffffff;
+  color: #0d2e22;
   text-decoration: none;
-  background: linear-gradient(135deg, var(--bl-green-600, #1f7353), var(--bl-accent, #5ef0b8));
+  background: linear-gradient(135deg, #5ef0b8 0%, #3dd99a 50%, #5ef0b8 100%);
+  background-size: 200% 200%;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(94, 240, 184, 0.12);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 12px rgba(94, 240, 184, 0.15),
+              0 0 0 1px rgba(94, 240, 184, 0.1);
   white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
 .bl-nav-btn-signup:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(94, 240, 184, 0.2);
+  box-shadow: 0 4px 24px rgba(94, 240, 184, 0.25),
+              0 0 0 1px rgba(94, 240, 184, 0.2);
+  background-position: 100% 100%;
 }
 
 .bl-nav-btn-arrow {
-  font-size: 12px;
-  transition: transform 0.3s ease;
+  font-size: 11px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bl-nav-btn-signup:hover .bl-nav-btn-arrow { transform: translateX(3px); }
 
 /* Hamburger */
 .bl-navbar-hamburger.MuiIconButton-root {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+  margin-left: auto;
 }
 
 .bl-navbar-hamburger.MuiIconButton-root:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(94, 240, 184, 0.06);
+  border-color: rgba(94, 240, 184, 0.15);
   color: #ffffff;
 }
+
 
 /* ═══════════════════════════════════════════
    MOBILE DRAWER
    ═══════════════════════════════════════════ */
 .bl-nav-drawer.MuiPaper-root {
-  background: var(--bl-green-900, #0d2e22) !important;
+  background: linear-gradient(180deg, #091f17 0%, #0d2e22 100%) !important;
   color: #ffffff;
   width: 300px;
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(94, 240, 184, 0.06);
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.3) !important;
 }
 
 .bl-nav-drawer-header {
@@ -183,17 +223,18 @@
   padding: 16px 20px;
 }
 
-.bl-nav-drawer-logo { height: 44px; width: auto; }
+.bl-nav-drawer-logo { height: 40px; width: auto; }
 
 .bl-nav-drawer-close.MuiIconButton-root {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
   padding: 8px;
   border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
 .bl-nav-drawer-close.MuiIconButton-root:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(94, 240, 184, 0.06);
 }
 
 .bl-nav-drawer-list { padding: 12px 8px !important; }
@@ -201,17 +242,20 @@
 .bl-nav-drawer-item.MuiListItem-root {
   border-radius: 10px;
   margin-bottom: 2px;
-  padding: 10px 16px;
+  padding: 12px 16px;
   transition: all 0.25s ease;
 }
 
-.bl-nav-drawer-item.MuiListItem-root:hover { background: rgba(255, 255, 255, 0.05); }
+.bl-nav-drawer-item.MuiListItem-root:hover {
+  background: rgba(94, 240, 184, 0.05);
+}
 
 .bl-nav-drawer-link-text.MuiTypography-root {
   font-family: "DM Sans", sans-serif !important;
   font-size: 15px !important;
   font-weight: 500 !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  letter-spacing: 0.2px !important;
 }
 
 .bl-nav-drawer-item.MuiListItem-root:hover .bl-nav-drawer-link-text.MuiTypography-root {
@@ -230,7 +274,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
+  padding: 13px 20px;
   font-family: "DM Sans", sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -238,28 +282,29 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
+  letter-spacing: 0.3px;
 }
 
 .bl-nav-btn-login-mobile {
-  color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .bl-nav-btn-login-mobile:hover {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(94, 240, 184, 0.2);
+  background: rgba(94, 240, 184, 0.06);
 }
 
 .bl-nav-btn-signup-mobile {
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--bl-green-600, #1f7353), var(--bl-accent, #5ef0b8));
-  box-shadow: 0 4px 16px rgba(94, 240, 184, 0.12);
+  color: #0d2e22;
+  background: linear-gradient(135deg, #5ef0b8, #3dd99a);
+  box-shadow: 0 4px 16px rgba(94, 240, 184, 0.15);
 }
 
 .bl-nav-btn-signup-mobile:hover {
-  box-shadow: 0 6px 24px rgba(94, 240, 184, 0.2);
+  box-shadow: 0 6px 24px rgba(94, 240, 184, 0.25);
 }
 
 
@@ -267,12 +312,12 @@
    AUTH DIALOG — Dark Theme
    ═══════════════════════════════════════════ */
 
-/* Override PrimeReact Dialog */
 .bl-auth-dialog .p-dialog {
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(94, 240, 184, 0.08);
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(94, 240, 184, 0.04);
 }
 
 .bl-auth-dialog .p-dialog-content {
@@ -280,9 +325,12 @@
   padding: 0 !important;
 }
 
-/* Auth Card */
+.bl-auth-dialog .p-dialog-mask {
+  backdrop-filter: blur(8px);
+}
+
 .bl-auth-card {
-  background: #0e2a1f;
+  background: linear-gradient(170deg, #0e2a1f 0%, #0a1f16 100%);
   padding: 40px;
   position: relative;
 }
@@ -294,9 +342,9 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -306,11 +354,11 @@
 }
 
 .bl-auth-close:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Header */
 .bl-auth-header {
   text-align: center;
   margin-bottom: 32px;
@@ -320,18 +368,20 @@
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--bl-green-600, #1f7353), var(--bl-accent, #5ef0b8));
+  background: linear-gradient(135deg, #1f7353, #5ef0b8);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
   font-size: 1.4rem;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(94, 240, 184, 0.15);
+  color: #0d2e22;
+  box-shadow: 0 8px 28px rgba(94, 240, 184, 0.18),
+              0 0 0 4px rgba(94, 240, 184, 0.05);
 }
 
 .bl-auth-icon-signup {
-  background: linear-gradient(135deg, var(--bl-accent, #5ef0b8), var(--bl-gold, #f5d76e));
+  background: linear-gradient(135deg, #5ef0b8, #f5d76e);
+  color: #0d2e22;
 }
 
 .bl-auth-title {
@@ -346,11 +396,10 @@
 .bl-auth-subtitle {
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   margin: 0;
 }
 
-/* Form */
 .bl-auth-form {
   display: flex;
   flex-direction: column;
@@ -373,115 +422,84 @@
   font-family: "DM Sans", sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.2px;
 }
 
 .bl-auth-req { color: var(--bl-accent, #5ef0b8); }
 
-/* Input overrides */
-.bl-auth-input-wrap {
-  width: 100%;
-}
+.bl-auth-input-wrap { width: 100%; }
 
 .bl-auth-input-wrap .pi {
-  color: rgba(255, 255, 255, 0.25) !important;
+  color: rgba(255, 255, 255, 0.2) !important;
   font-size: 0.85rem;
 }
 
 .bl-auth-input.p-inputtext {
   width: 100%;
   padding: 12px 16px 12px 38px;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.07) !important;
   border-radius: 10px !important;
   color: #ffffff !important;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 .bl-auth-input.p-inputtext:focus {
-  border-color: var(--bl-accent, #5ef0b8) !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.08) !important;
+  border-color: rgba(94, 240, 184, 0.4) !important;
+  background: rgba(94, 240, 184, 0.03) !important;
+  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.06) !important;
 }
 
-.bl-auth-input.p-inputtext::placeholder {
-  color: rgba(255, 255, 255, 0.2);
-}
+.bl-auth-input.p-inputtext::placeholder { color: rgba(255, 255, 255, 0.18); }
+.bl-auth-input.p-invalid { border-color: #ef4444 !important; }
 
-.bl-auth-input.p-invalid {
-  border-color: #ef4444 !important;
-}
-
-/* Password field */
-.bl-auth-password {
-  width: 100%;
-}
+.bl-auth-password { width: 100%; }
 
 .bl-auth-password .p-password-input {
   width: 100%;
   padding: 12px 42px 12px 16px;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.07) !important;
   border-radius: 10px !important;
   color: #ffffff !important;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 .bl-auth-password .p-password-input:focus {
-  border-color: var(--bl-accent, #5ef0b8) !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.08) !important;
+  border-color: rgba(94, 240, 184, 0.4) !important;
+  background: rgba(94, 240, 184, 0.03) !important;
+  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.06) !important;
 }
 
-.bl-auth-password .p-password-input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
-}
+.bl-auth-password .p-password-input::placeholder { color: rgba(255, 255, 255, 0.18); }
+.bl-auth-password .p-password-toggle { color: rgba(255, 255, 255, 0.25) !important; }
+.bl-auth-password .p-password-toggle:hover { color: rgba(255, 255, 255, 0.5) !important; }
 
-.bl-auth-password .p-password-toggle {
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.bl-auth-password .p-password-toggle:hover {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-
-/* Password strength meter override */
 .bl-auth-password .p-password-meter {
-  background: rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
   border-radius: 4px;
   margin-top: 6px;
 }
 
-/* Error message */
-.bl-auth-error {
-  margin-top: 2px;
-}
+.bl-auth-error { margin-top: 2px; }
+.bl-auth-error .p-message { font-size: 12px; padding: 4px 8px; }
 
-.bl-auth-error .p-message {
-  font-size: 12px;
-  padding: 4px 8px;
-}
-
-/* Options row (remember + forgot) */
 .bl-auth-options {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.bl-auth-remember {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+.bl-auth-remember { display: flex; align-items: center; gap: 8px; }
 
 .bl-auth-checkbox .p-checkbox-box {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
   border-radius: 6px;
 }
 
@@ -493,7 +511,7 @@
 .bl-auth-remember-label {
   font-family: "DM Sans", sans-serif;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
 
@@ -503,69 +521,61 @@
   color: var(--bl-accent, #5ef0b8);
   cursor: pointer;
   text-decoration: none;
-  transition: opacity 0.25s ease;
+  transition: all 0.25s ease;
 }
 
-.bl-auth-forgot:hover { opacity: 0.8; }
+.bl-auth-forgot:hover { opacity: 0.75; }
 
-/* Terms */
-.bl-auth-terms {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
+.bl-auth-terms { display: flex; align-items: flex-start; gap: 10px; }
 
 .bl-auth-terms-label {
   font-family: "DM Sans", sans-serif;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   line-height: 1.5;
   cursor: pointer;
 }
 
-.bl-auth-terms-link {
-  color: var(--bl-accent, #5ef0b8);
-  text-decoration: none;
-}
-
+.bl-auth-terms-link { color: var(--bl-accent, #5ef0b8); text-decoration: none; }
 .bl-auth-terms-link:hover { text-decoration: underline; }
 
-/* Submit button */
 .bl-auth-submit.p-button {
   width: 100%;
   padding: 14px 24px;
-  background: linear-gradient(135deg, var(--bl-green-600, #1f7353), var(--bl-accent, #5ef0b8)) !important;
+  background: linear-gradient(135deg, #5ef0b8 0%, #3dd99a 100%) !important;
   border: none !important;
   border-radius: 12px !important;
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 600;
+  color: #0d2e22 !important;
   margin-top: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 24px rgba(94, 240, 184, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(94, 240, 184, 0.15),
+              0 0 0 1px rgba(94, 240, 184, 0.1);
 }
 
 .bl-auth-submit.p-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(94, 240, 184, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(94, 240, 184, 0.25),
+              0 0 0 1px rgba(94, 240, 184, 0.15) !important;
 }
 
 .bl-auth-submit.p-button:focus {
-  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.15) !important;
+  box-shadow: 0 0 0 3px rgba(94, 240, 184, 0.12) !important;
 }
 
-/* Footer */
 .bl-auth-footer {
   text-align: center;
   margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .bl-auth-footer p {
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.3);
   margin: 0;
 }
 
@@ -577,20 +587,25 @@
   transition: opacity 0.25s ease;
 }
 
-.bl-auth-switch:hover { opacity: 0.8; }
+.bl-auth-switch:hover { opacity: 0.75; }
 
 
 /* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
 @media (max-width: 960px) {
-  .bl-navbar-toolbar.MuiToolbar-root { padding: 8px 16px; }
-  .bl-navbar-logo { height: 48px; }
-  .bl-navbar-spacer { height: 68px; }
+  .bl-navbar-toolbar.MuiToolbar-root {
+    padding: 0 16px;
+    min-height: 64px;
+  }
+  .bl-navbar-logo { height: 40px; }
+  .bl-navbar-logo-wrap { margin-right: 0; }
+  .bl-navbar-spacer { height: 64px; }
 }
 
 @media (max-width: 600px) {
-  .bl-navbar-logo { height: 40px; }
+  .bl-navbar-toolbar.MuiToolbar-root { min-height: 60px; }
+  .bl-navbar-logo { height: 36px; }
   .bl-navbar-spacer { height: 60px; }
   .bl-nav-drawer.MuiPaper-root { width: 280px; }
   .bl-auth-card { padding: 28px 20px; }
