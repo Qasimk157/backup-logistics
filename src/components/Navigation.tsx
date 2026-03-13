@@ -223,7 +223,7 @@ const Navigation = forwardRef<NavigationHandle, INavbarCallbacks>(
 	const navLinks = [
 	  { label: "About Us", onClick: onHomeClick },
 	  { label: "Services", onClick: onFeaturesClick },
-	  { label: "Legal", onClick: onFeaturesClick },
+	  { label: "Legal", onClick: onAboutClick },
 	  { label: "Profile", onClick: onContactClick },
 	];
 
