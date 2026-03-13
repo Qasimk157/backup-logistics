@@ -7,6 +7,9 @@
   padding: 100px 24px 80px;
   background: var(--bl-dark-bg, #0c1f18);
   overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
 .bl-services-bg {
@@ -314,13 +317,13 @@
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  .bl-services-section { padding: 72px 20px 60px; }
+  .bl-services-section { padding: 72px 20px 60px; border-radius: 16px; }
   .bl-services-title { font-size: 36px; }
   .bl-services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 
 @media (max-width: 600px) {
-  .bl-services-section { padding: 56px 16px 48px; }
+  .bl-services-section { padding: 56px 16px 48px; border-radius: 12px; }
   .bl-services-title { font-size: 28px; }
   .bl-services-grid { grid-template-columns: 1fr; }
   .bl-services-tabs { flex-direction: column; align-items: center; }
