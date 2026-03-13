@@ -4,12 +4,10 @@
 
 .bl-services-section {
   position: relative;
-  padding: 100px 24px 80px;
+  padding: 80px 40px 70px;
   background: var(--bl-dark-bg, #0c1f18);
   overflow: hidden;
-  max-width: 1280px;
-  margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 24px;
 }
 
 .bl-services-bg {
@@ -19,6 +17,7 @@
     radial-gradient(ellipse at 30% 10%, rgba(31, 115, 83, 0.1) 0%, transparent 55%),
     radial-gradient(ellipse at 80% 90%, rgba(94, 240, 184, 0.04) 0%, transparent 45%);
   pointer-events: none;
+  border-radius: 24px;
 }
 
 /* ─── HEADER ─── */
@@ -317,13 +316,13 @@
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  .bl-services-section { padding: 72px 20px 60px; border-radius: 16px; }
+  .bl-services-section { padding: 60px 24px 50px; border-radius: 18px; }
   .bl-services-title { font-size: 36px; }
   .bl-services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 
 @media (max-width: 600px) {
-  .bl-services-section { padding: 56px 16px 48px; border-radius: 12px; }
+  .bl-services-section { padding: 48px 16px 40px; border-radius: 14px; }
   .bl-services-title { font-size: 28px; }
   .bl-services-grid { grid-template-columns: 1fr; }
   .bl-services-tabs { flex-direction: column; align-items: center; }
