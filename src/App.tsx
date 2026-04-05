@@ -15,14 +15,16 @@ import "primeflex/primeflex.css";
 import Footer from "./components/Footer";
 import { useMediaQuery, useTheme } from "@mui/material";
 import VerticalDemo from "./components/ExploreJourney";
+import { useSelector } from "react-redux";
+import { RootState } from "./tms/store";
+import TmsApp from "./tms/TmsApp";
 
-function App() {
+function LandingPage() {
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 	const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 	const isMediumScreen = useMediaQuery(theme.breakpoints.down("lg"));
 	const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
-	const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 	const padding = isExtraSmallScreen ? '1rem' : isSmallScreen ? '8rem' : isMediumScreen ? "3rem" : isLargeScreen ? "4rem" : '1.5rem 200px';
 
 	const navRef = useRef<NavigationHandle>(null);
@@ -58,47 +60,55 @@ function App() {
 	};
 
 	return (
-		<Router>
+		<div>
+			<Navigation
+				ref={navRef}
+				onHomeClick={() => scrollToSection(homeRef)}
+				onAboutClick={() => scrollToSection(aboutRef)}
+				onFeaturesClick={() => scrollToSection(servicesRef)}
+				onPricingClick={() => scrollToSection(pricingRef)}
+				onSupportClick={() => scrollToSection(supportRef)}
+				onContactClick={() => scrollToSection(contactRef)}
+			/>
 			<div>
-				<Navigation
-					ref={navRef}
-					onHomeClick={() => scrollToSection(homeRef)}
-					onAboutClick={() => scrollToSection(aboutRef)}
-					onFeaturesClick={() => scrollToSection(servicesRef)}
-					onPricingClick={() => scrollToSection(pricingRef)}
-					onSupportClick={() => scrollToSection(supportRef)}
-					onContactClick={() => scrollToSection(contactRef)}
-				/>
-				<div>
-					<div ref={homeRef} style={{ padding }}>
-						<Home
-							onGetStartedClick={() => navRef.current?.openSignup()}
-							onContactClick={() => scrollToSection(contactRef)}
-						/>
-					</div>
-					<div ref={aboutRef} style={{ ...aboutStyle, padding }}>
-						<About />
-					</div>
-					<div ref={servicesRef}>
-						<Services />
-					</div>
-					<div ref={exploreRef} style={{ ...contactStyle, padding }}>
-						<VerticalDemo />
-					</div>
-					<div ref={contactRef} style={{ ...contactStyle, padding }}>
-						<Contact />
-					</div>
-					<div style={footerStyle}>
-						<Footer
-							onHomeClick={() => scrollToSection(homeRef)}
-							onAboutClick={() => scrollToSection(aboutRef)}
-							onFeaturesClick={() => scrollToSection(servicesRef)}
-							onPricingClick={() => scrollToSection(pricingRef)}
-							onContactClick={() => scrollToSection(contactRef)}
-						/>
-					</div>
+				<div ref={homeRef} style={{ padding }}>
+					<Home
+						onGetStartedClick={() => navRef.current?.openSignup()}
+						onContactClick={() => scrollToSection(contactRef)}
+					/>
+				</div>
+				<div ref={aboutRef} style={{ ...aboutStyle, padding }}>
+					<About />
+				</div>
+				<div ref={servicesRef}>
+					<Services />
+				</div>
+				<div ref={exploreRef} style={{ ...contactStyle, padding }}>
+					<VerticalDemo />
+				</div>
+				<div ref={contactRef} style={{ ...contactStyle, padding }}>
+					<Contact />
+				</div>
+				<div style={footerStyle}>
+					<Footer
+						onHomeClick={() => scrollToSection(homeRef)}
+						onAboutClick={() => scrollToSection(aboutRef)}
+						onFeaturesClick={() => scrollToSection(servicesRef)}
+						onPricingClick={() => scrollToSection(pricingRef)}
+						onContactClick={() => scrollToSection(contactRef)}
+					/>
 				</div>
 			</div>
+		</div>
+	);
+}
+
+function App() {
+	const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+
+	return (
+		<Router>
+			{isAuthenticated ? <TmsApp /> : <LandingPage />}
 		</Router>
 	);
 }

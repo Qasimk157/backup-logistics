@@ -1,0 +1,427 @@
+/* ============================================
+   TMS Dashboard Styles
+   ============================================ */
+
+/* Page Headers */
+.tms-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tms-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.tms-page-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 0 0;
+}
+
+/* Stats Grid */
+.tms-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* AG Grid Wrapper */
+.tms-grid-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.tms-grid-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tms-grid-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Forms */
+.tms-form-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  max-width: 900px;
+}
+
+.tms-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tms-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tms-form-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.tms-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Detail Pages */
+.tms-detail-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.tms-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.tms-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tms-detail-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tms-detail-value {
+  font-size: 15px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* Status Timeline */
+.tms-timeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 24px 0;
+  overflow-x: auto;
+}
+
+.tms-timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  position: relative;
+}
+
+.tms-timeline-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.tms-timeline-dot.active {
+  background: #064422;
+  color: #fff;
+}
+
+.tms-timeline-dot.completed {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.tms-timeline-dot.pending {
+  background: #e0e0e0;
+  color: #999;
+}
+
+.tms-timeline-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.tms-timeline-connector {
+  flex: 1;
+  height: 3px;
+  min-width: 40px;
+  margin-top: -16px;
+}
+
+.tms-timeline-connector.completed {
+  background: #2e7d32;
+}
+
+.tms-timeline-connector.pending {
+  background: #e0e0e0;
+}
+
+/* Dispatch Board */
+.tms-dispatch-board {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  min-height: calc(100vh - 200px);
+}
+
+.tms-dispatch-column {
+  min-width: 280px;
+  max-width: 320px;
+  flex: 1;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tms-dispatch-column-header {
+  padding: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tms-dispatch-column-count {
+  background: #e0e0e0;
+  color: #666;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tms-dispatch-column-body {
+  flex: 1;
+  padding: 8px;
+  min-height: 100px;
+}
+
+.tms-dispatch-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #e0e0e0;
+  cursor: grab;
+  transition: box-shadow 0.2s;
+}
+
+.tms-dispatch-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tms-dispatch-card-dragging {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: rotate(2deg);
+}
+
+.tms-dispatch-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tms-dispatch-card-load {
+  font-weight: 700;
+  font-size: 13px;
+  color: #064422;
+}
+
+.tms-dispatch-card-rate {
+  font-weight: 700;
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+.tms-dispatch-card-route {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.tms-dispatch-card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #888;
+}
+
+/* Invoice Detail */
+.tms-invoice-preview {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.tms-invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #064422;
+}
+
+.tms-invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+
+.tms-invoice-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #f5f5f5;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tms-invoice-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.tms-invoice-table td:last-child,
+.tms-invoice-table th:last-child {
+  text-align: right;
+}
+
+.tms-invoice-totals {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.tms-invoice-totals table {
+  border-collapse: collapse;
+}
+
+.tms-invoice-totals td {
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
+.tms-invoice-totals .total-row td {
+  font-weight: 700;
+  font-size: 16px;
+  border-top: 2px solid #333;
+  padding-top: 10px;
+}
+
+/* Action Buttons */
+.tms-btn-primary {
+  background: #064422 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.tms-btn-primary:hover {
+  background: #0a5c30 !important;
+}
+
+.tms-btn-secondary {
+  background: transparent !important;
+  color: #333 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+}
+
+.tms-btn-secondary:hover {
+  background: #f5f5f5 !important;
+}
+
+/* Quick Actions */
+.tms-quick-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tms-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tms-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tms-detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tms-dispatch-board {
+    flex-direction: column;
+  }
+
+  .tms-dispatch-column {
+    max-width: 100%;
+  }
+
+  .tms-invoice-preview {
+    padding: 20px;
+  }
+}
